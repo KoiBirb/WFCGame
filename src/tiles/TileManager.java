@@ -20,7 +20,7 @@ public class TileManager {
         this.gp = gp;
 
         // amount of different tiles
-        tile = new Tile[10];
+        tile = new Tile[33];
         mapTileNum = new int [gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
@@ -31,30 +31,75 @@ public class TileManager {
         try{
 
             tile[0] = new Tile();
-            tile[0].image = ImageIO.read(getClass().getResourceAsStream("/background/grass_1.png"));
+            tile[0].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Grass.png"));
 
             tile[1] = new Tile();
-            tile[1].image = ImageIO.read(getClass().getResourceAsStream("/background/stone.png"));
-
+            tile[1].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1.png"));
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/background/water.png"));
-            tile[2].collision = true;
-
+            tile[2].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1Down.png"));
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/background/dirt.png"));
-
+            tile[3].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1Inverted.png"));
             tile[4] = new Tile();
-            tile[4].image = ImageIO.read(getClass().getResourceAsStream("/background/tree.png"));
-            tile[4].collision = true;
-
+            tile[4].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1Left1.png"));
             tile[5] = new Tile();
-            tile[5].image = ImageIO.read(getClass().getResourceAsStream("/background/sand.png"));
-
+            tile[5].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1Left2.png"));
             tile[6] = new Tile();
-            tile[6].image = ImageIO.read(getClass().getResourceAsStream("/background/grass_2.png"));
-
+            tile[6].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1LeftDown.png"));
             tile[7] = new Tile();
-            tile[7].image = ImageIO.read(getClass().getResourceAsStream("/background/grass_3.png"));
+            tile[7].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1LeftRight.png"));
+            tile[8] = new Tile();
+            tile[8].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1Right.png"));
+            tile[9] = new Tile();
+            tile[9].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1Surround.png"));
+            tile[10] = new Tile();
+            tile[10].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1Up.png"));
+            tile[11] = new Tile();
+            tile[11].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path1UpDown.png"));
+
+            tile[12] = new Tile();
+            tile[12].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path2.png"));
+            tile[13] = new Tile();
+            tile[13].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path2Down.png"));
+            tile[14] = new Tile();
+            tile[14].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path2LeftUp.png"));
+            tile[15] = new Tile();
+            tile[15].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path2LeftUpDown.png"));
+            tile[16] = new Tile();
+            tile[16].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path2Right1.png"));
+            tile[17] = new Tile();
+            tile[17].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path2Right2.png"));
+            tile[18] = new Tile();
+            tile[18].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path2Up.png"));
+            tile[19] = new Tile();
+            tile[19].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path2UpDown.png"));
+
+            tile[20] = new Tile();
+            tile[20].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path3.png"));
+            tile[21] = new Tile();
+            tile[21].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path3Down.png"));
+            tile[22] = new Tile();
+            tile[22].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path3Left.png"));
+            tile[23] = new Tile();
+            tile[23].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path3LeftRight.png"));
+            tile[24] = new Tile();
+            tile[24].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path3LeftRightUp.png"));
+            tile[25] = new Tile();
+            tile[25].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path3Right.png"));
+            tile[26] = new Tile();
+            tile[26].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path3RightDown.png"));
+
+            tile[27] = new Tile();
+            tile[27].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path4.png"));
+            tile[28] = new Tile();
+            tile[28].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path4Left.png"));
+            tile[29] = new Tile();
+            tile[29].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path4RightUp.png"));
+            tile[30] = new Tile();
+            tile[30].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path4RightUpDown.png"));
+            tile[31] = new Tile();
+            tile[31].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path4Up.png"));
+            tile[32] = new Tile();
+            tile[32].image = ImageIO.read(getClass().getResourceAsStream("/Tiles/Path4UpDown.png"));
 
 
         }catch(IOException e){

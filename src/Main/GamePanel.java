@@ -11,8 +11,8 @@ import java.awt.*;
 public class GamePanel extends JPanel implements Runnable{
 
     // More screen settings
-    final int originalTileSize = 16; // 16x16 tile size
-    final int scale = 3;
+    final int originalTileSize = 32; // 32x32 tile size
+    final int scale = 2;
 
     public final int tileSize = originalTileSize * scale; // real tile size
     public final int maxScreenCol = 16; // tiles per col
@@ -21,8 +21,8 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; // game screen height
 
     // world map settings
-    public final int maxWorldCol = 50;
-    public final int maxWorldRow = 50;
+    public final int maxWorldCol = 25;
+    public final int maxWorldRow = 25;
 
     int FPS = 60; // frames per second
 
@@ -59,7 +59,7 @@ public class GamePanel extends JPanel implements Runnable{
         aHandler.setObject();
         playMusic(0);
         gameState = playState;
-        tileM.loadMap("/maps/map.txt");
+        tileM.loadMap("/Map/map.txt");
     }
 
     public void startGameThread() {

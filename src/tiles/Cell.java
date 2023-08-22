@@ -69,6 +69,7 @@ public class Cell implements Comparable<Cell>{
                     options = new ArrayList<>(Collections.singletonList(options.get(random.nextInt(options.size()))));
                 }
             } catch (IndexOutOfBoundsException e){
+                System.out.println("No options to collapse");
                 options = new ArrayList<>(Collections.singletonList(defaultTile));
             }
         collapsed = true;

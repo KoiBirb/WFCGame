@@ -4,7 +4,74 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="" />
+    <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="Changed tile set and fixed side checks">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/background/dirt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/background/grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/background/grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/background/grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/background/sand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/background/stone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/background/tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/background/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/maps/map.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/AssetHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/AssetHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/CollisionCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/CollisionCheck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/UI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/background/dirt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/background/grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/background/grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/background/grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/background/sand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/background/stone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/background/tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/background/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/maps/map.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/object/Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/object/Key.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/object/SuperObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/object/SuperObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/tiles/Cell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/tiles/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/tiles/TileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/WFCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/tiles/WFCController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/Weights.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/tiles/Weights.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/background/dirt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/background/grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/background/grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/background/grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/background/sand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/background/stone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/background/tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/background/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/maps/map.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/objects/chest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/objects/key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/sound/background_music_1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/sound/background_music_2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/sound/background_music_3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/sound/battle_music_1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/sound/battle_music_2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/sound/key_collect.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiles/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiles/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiles/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiles/WFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/WFCController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiles/Weights.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/Weights.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,16 +88,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "vcs.Git"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/koi/Documents/GitHub/PirateGame/src&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,5 +125,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed tile set and fixed side checks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed tile set and fixed side checks" />
   </component>
 </project>

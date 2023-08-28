@@ -3,7 +3,7 @@ package Main;
 import entity.Player;
 import object.SuperObject;
 import tiles.TileManager;
-import tiles.WFCController;
+import WaveFunctionCollapse.WFCController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,8 +21,8 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; // game screen height
 
     // world map settings
-    public final int maxWorldCol = 25;
-    public final int maxWorldRow = 25;
+    public final int maxWorldCol = 50;
+    public final int maxWorldRow = 50;
 
     int FPS = 60; // frames per second
 

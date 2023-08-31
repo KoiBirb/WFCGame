@@ -21,7 +21,7 @@ public class TileManager {
 
         // amount of different tiles
         tile = new Tile[33];
-        mapTileNum = new int [gp.maxWorldCol][gp.maxWorldRow];
+        mapTileNum = new int [gp.maxWorldSize][gp.maxWorldSize];
 
         getTileImage();
     }
@@ -115,11 +115,11 @@ public class TileManager {
             int col = 0;
             int row = 0;
 
-            while (col < gp.maxWorldCol && row < gp.maxWorldRow) {
+            while (col < gp.maxWorldSize && row < gp.maxWorldSize) {
 
                 String line = br.readLine();
 
-                while (col < gp.maxWorldCol) {
+                while (col < gp.maxWorldSize) {
 
                     String numbers[] = line.split(" ");
 
@@ -129,7 +129,7 @@ public class TileManager {
                     mapTileNum[col][row] = num;
                     col++;
                 }
-                if (col == gp.maxWorldCol) {
+                if (col == gp.maxWorldSize) {
                     col = 0;
                     row++;
                 }
@@ -147,7 +147,7 @@ public class TileManager {
         int worldRow = 0;
 
 
-        while (worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
+        while (worldCol < gp.maxWorldSize && worldRow < gp.maxWorldSize) {
 
             int tileNum = mapTileNum[worldCol][worldRow];
 
@@ -165,7 +165,7 @@ public class TileManager {
             }
                 worldCol++;
 
-                if (worldCol == gp.maxWorldCol) {
+                if (worldCol == gp.maxWorldSize) {
                     worldCol = 0;
                     worldRow++;
                 }

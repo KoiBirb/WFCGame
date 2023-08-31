@@ -1,9 +1,10 @@
 package Main;
 
+import WaveFunctionCollapse.SuperWFCControler;
 import entity.Player;
 import object.SuperObject;
 import tiles.TileManager;
-import WaveFunctionCollapse.WFCController;
+import WaveFunctionCollapse.tiles.TileWFCController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,8 +22,7 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; // game screen height
 
     // world map settings
-    public final int maxWorldCol = 50;
-    public final int maxWorldRow = 50;
+    public final int maxWorldSize = 25;
 
     int FPS = 60; // frames per second
 
@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements Runnable{
     Sound music = new Sound();
     Sound effect = new Sound();
     Thread gameThread;
-    WFCController wfcC = new WFCController();
+    TileWFCController tileWFCC = new TileWFCController();
     public CollisionCheck cCheck = new CollisionCheck(this);
     public AssetHandler aHandler = new AssetHandler(this);
     public UI ui = new UI(this);
@@ -55,7 +55,7 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
     public void setupGame() {
-        wfcC.initialize();
+        tileWFCC.initialize();
         aHandler.setObject();
         playMusic(0);
         gameState = playState;

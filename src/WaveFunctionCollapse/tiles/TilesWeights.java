@@ -1,9 +1,9 @@
-package WaveFunctionCollapse;
+package WaveFunctionCollapse.tiles;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Weights{
+public class TilesWeights {
 
     public static final double[] weightNull = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
     private final ArrayList<int[]>options;
@@ -87,7 +87,7 @@ public class Weights{
     double[] weightPath4Up = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
     double[] weightPath4UpDown = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
 
-    public Weights (ArrayList<int[]>options){
+    public TilesWeights(ArrayList<int[]>options){
         this.options = options;
     }
 

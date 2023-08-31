@@ -4,23 +4,92 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="Changed tile set and fixed side checks">
+    <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="Fixed clean up function edited map creation message">
+      <change afterPath="$PROJECT_DIR$/src/Assets/player/Walk/player_up_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assets/player/Walk/player_up_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assets/player/Walk/player_up_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/SuperWFCControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Map/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Assets/Map/map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/PlayerNew/D_Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/PlayerNew/D_Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/PlayerNew/D_Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/PlayerNew/S_Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/PlayerNew/S_Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/PlayerNew/S_Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/PlayerNew/U_Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/PlayerNew/U_Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/PlayerNew/U_Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/player_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/player_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/player_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/player_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/player_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/player_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/player_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/player_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Map/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Map/map.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/WFCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/WFCController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/PlayerNew/D_Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/PlayerNew/D_Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/PlayerNew/D_Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/PlayerNew/S_Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/PlayerNew/S_Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/PlayerNew/S_Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/PlayerNew/U_Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/PlayerNew/U_Death.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/PlayerNew/U_Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Grid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/WFCController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Weights.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/player_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/player_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/player_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/player_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/player_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/player_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/player_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/player_up_2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assets/Map/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Map/map.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/WFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/WFCController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/PlayerNew/D_Attack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/player/Attack/D_Attack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/PlayerNew/D_Death.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/player/Death/D_Death.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/PlayerNew/D_Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/PlayerNew/S_Attack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/player/Attack/S_Attack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/PlayerNew/S_Death.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/player/Death/S_Death.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/PlayerNew/S_Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/PlayerNew/U_Attack.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/player/Attack/U_Attack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/PlayerNew/U_Death.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/player/Death/U_Death.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/PlayerNew/U_Walk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/player/player_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/WFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileWFCController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Weights.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TilesWeights.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tiles/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tiles/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,24 +98,35 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2U2B3WQmgAnJc3ljZGJyDd5y2sc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/koi/Documents/GitHub/PirateGame/src&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/koi/Documents/GitHub/PirateGame/src",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Assets/player/Walk" />
+      <recent name="$PROJECT_DIR$/src/Assets/player" />
+      <recent name="$PROJECT_DIR$/src/Assets/PlayerNew/Walk" />
+      <recent name="$PROJECT_DIR$/src/Assets/PlayerNew/Death" />
+      <recent name="$PROJECT_DIR$/src/Assets/PlayerNew/Attack" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -65,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692729166227</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed clean up function edited map creation message">
+      <created>1693500235524</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693500235525</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,7 +167,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Changed tile set and fixed side checks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed tile set and fixed side checks" />
+    <MESSAGE value="Fixed clean up function edited map creation message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed clean up function edited map creation message" />
   </component>
 </project>

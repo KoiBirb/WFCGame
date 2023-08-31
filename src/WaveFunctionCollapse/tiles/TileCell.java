@@ -1,10 +1,10 @@
-package WaveFunctionCollapse;
+package WaveFunctionCollapse.tiles;
 
 import java.security.SecureRandom;
 import java.util.*;
 
 
-public class Cell implements Comparable<Cell>{
+public class TileCell implements Comparable<TileCell>{
 
     private ArrayList<int[]> options;
     public double[] weight = {1,1,1,1,1,1,1,1};
@@ -12,7 +12,7 @@ public class Cell implements Comparable<Cell>{
     private final SecureRandom random = new SecureRandom();
     private final HashMap<int[], Integer> optionMap;
 
-    public Cell(ArrayList<int[]> options, HashMap<int[], Integer> optionMap){
+    public TileCell(ArrayList<int[]> options, HashMap<int[], Integer> optionMap){
         this.options = options;
         this.optionMap = optionMap;
         collapsed = false;
@@ -94,7 +94,7 @@ public class Cell implements Comparable<Cell>{
     }
 
     @Override
-    public int compareTo(Cell o) {
+    public int compareTo(TileCell o) {
         return Double.compare(entropy(), o.entropy());
     }
 }

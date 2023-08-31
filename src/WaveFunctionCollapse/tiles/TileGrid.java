@@ -1,22 +1,22 @@
-package WaveFunctionCollapse;
+package WaveFunctionCollapse.tiles;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
-public class Grid{
+public class TileGrid {
 
     private final int width;
     private final int height;
     private final int tilePercentDivider;
-    private final ArrayList<Cell> grid = new ArrayList<>();
+    private final ArrayList<TileCell> grid = new ArrayList<>();
     private ArrayList<int[]> options;
     private int[] grassOption;
     HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap;
     HashMap<int[], Integer> optionMap;
 
-    public Grid(int width, int height, ArrayList<int[]>options, HashMap<int[], Integer> optionMap, HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap) {
+    public TileGrid(int width, int height, ArrayList<int[]>options, HashMap<int[], Integer> optionMap, HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap) {
         this.width = width;
         this.height = height;
         this.options = options;
@@ -31,25 +31,25 @@ public class Grid{
     private void setupGrid() {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                grid.add(new Cell(options, optionMap));
+                grid.add(new TileCell(options, optionMap));
             }
         }
     }
 
-    private Cell getCell() {
-        ArrayList<Cell> mapOrdered = (ArrayList<Cell>) grid.clone();
-        mapOrdered.removeIf(Cell::isCollapsed);
+    private TileCell getCell() {
+        ArrayList<TileCell> mapOrdered = (ArrayList<TileCell>) grid.clone();
+        mapOrdered.removeIf(TileCell::isCollapsed);
         if (mapOrdered.isEmpty()) {
             return null;
         }
-        mapOrdered.sort(Cell::compareTo);
-        Cell leastEntropyCell = mapOrdered.get(0);
+        mapOrdered.sort(TileCell::compareTo);
+        TileCell leastEntropyCell = mapOrdered.get(0);
         mapOrdered.removeIf(cell -> cell.entropy() != leastEntropyCell.entropy());
         return mapOrdered.get(new SecureRandom().nextInt(mapOrdered.size()));
     }
 
     public boolean collapse(boolean cleanUp) {
-        Cell cell = getCell();
+        TileCell cell = getCell();
         if (cell != null) {
             if (cell.collapse()) {
                 int tilesCollapsed = 0;
@@ -73,7 +73,7 @@ public class Grid{
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 int index = y * width + x;
-                Cell currentCell = grid.get(index);
+                TileCell currentCell = grid.get(index);
                 if (!currentCell.isCollapsed()) {
 
                     ArrayList<String> adjacentTiles = new ArrayList<>();
@@ -148,10 +148,10 @@ public class Grid{
                     }
                     currentCell.setOptions(cumulativeValidOptions);
 
-                    double[] weightTileLeft = Weights.weightMap.get(adjacentTiles.get(2));
-                    double[] weightTileRight = Weights.weightMap.get(adjacentTiles.get(3));
-                    double[] weightTileBottom = Weights.weightMap.get(adjacentTiles.get(1));
-                    double[] weightTileTop = Weights.weightMap.get(adjacentTiles.get(0));
+                    double[] weightTileLeft = TilesWeights.weightMap.get(adjacentTiles.get(2));
+                    double[] weightTileRight = TilesWeights.weightMap.get(adjacentTiles.get(3));
+                    double[] weightTileBottom = TilesWeights.weightMap.get(adjacentTiles.get(1));
+                    double[] weightTileTop = TilesWeights.weightMap.get(adjacentTiles.get(0));
 
                     double[] newWeightTile = new double[33];
 
@@ -167,7 +167,7 @@ public class Grid{
 
     protected ArrayList<int[]> findAllowedOptions(ArrayList<int[]> cumulativeValidOptions, ArrayList<int[]> comparativeCellOptions, int position, String tile) {
         ArrayList<int[]> newCumulativeValidOptions = new ArrayList<>();
-        HashMap tileMap = Weights.tileCompatibilityHashMapFinder.get(tile);
+        HashMap tileMap = TilesWeights.tileCompatibilityHashMapFinder.get(tile);
         cumulativeValidOptions.forEach(option -> {
             if (tileMap.get(option) == Boolean.TRUE) {
                 for (int[] comparativeCellOption : comparativeCellOptions) {
@@ -188,7 +188,7 @@ public class Grid{
             for (int x = 0; x < width; x++) {
 
                 int index = y * width + x;
-                Cell currentCell = grid.get(index);
+                TileCell currentCell = grid.get(index);
 
                 if (currentCell.isCollapsed()) {
 
@@ -243,28 +243,28 @@ public class Grid{
         return tilesReset;
     }
 
-    public void smallResetAdjacentTiles(Cell cell){
+    public void smallResetAdjacentTiles(TileCell cell){
         int index = grid.indexOf(cell);
-        grid.set(index, new Cell(options, optionMap));
+        grid.set(index, new TileCell(options, optionMap));
         try {
             int indexUP = index - width;
-            grid.set(indexUP, new Cell(options, optionMap));
+            grid.set(indexUP, new TileCell(options, optionMap));
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexDOWN = index + width;
-            grid.set(indexDOWN, new Cell(options, optionMap));
+            grid.set(indexDOWN, new TileCell(options, optionMap));
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexLEFT = index - 1;
-            grid.set(indexLEFT, new Cell(options, optionMap));
+            grid.set(indexLEFT, new TileCell(options, optionMap));
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexRIGHT = index + 1;
-            grid.set(indexRIGHT, new Cell(options, optionMap));
+            grid.set(indexRIGHT, new TileCell(options, optionMap));
         } catch (IndexOutOfBoundsException e){}
     }
 
-    public ArrayList<Cell> getGrid() {
+    public ArrayList<TileCell> getGrid() {
         return grid;
     }
 }

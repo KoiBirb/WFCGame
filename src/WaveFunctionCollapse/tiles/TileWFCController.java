@@ -1,4 +1,7 @@
-package WaveFunctionCollapse;
+package WaveFunctionCollapse.tiles;
+
+import Main.GamePanel;
+import WaveFunctionCollapse.SuperWFCControler;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,12 +10,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.HashMap;
 
-public class WFCController{
-    Grid grid;
-    int gridSize = 50;
-    int tilesAcross = gridSize;
-    int tilesDown = gridSize;
-    int tileAmount = gridSize * gridSize;
+public class TileWFCController extends SuperWFCControler {
+    TileGrid grid;
 
     ArrayList<String> cellChoice = new ArrayList<>();
 
@@ -155,7 +154,7 @@ public class WFCController{
     HashMap<Integer, Boolean> optionCompatibilityMapKey2 = new HashMap<>();
     HashMap<int[], Integer> optionMap = new HashMap<>();
 
-    Weights weight  = new Weights(options);
+    TilesWeights weight  = new TilesWeights(options);
 
     public void initialize() {
         optionCompatibilityMap.put(0, optionCompatibilityMapKey0);
@@ -190,7 +189,7 @@ public class WFCController{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        grid = new Grid(tilesAcross, tilesDown, options, optionMap, optionCompatibilityMap);
+        grid = new TileGrid(tilesAcross, tilesDown, options, optionMap, optionCompatibilityMap);
         waveFunctionCollapse(false);
         cleanUp();
     }

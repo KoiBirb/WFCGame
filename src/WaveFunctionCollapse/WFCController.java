@@ -71,7 +71,7 @@ public class WFCController{
             optionPath4, optionPath4Left, optionPath4RightUp, optionPath4RightUpDown,
             optionPath4Up, optionPath4UpDown));
 
-    int similarAdjacentTileRequirementGrass = 1;
+    int similarAdjacentTileRequirementGrass = 2;
 
     int similarAdjacentTileRequirementPath1 = 0;
     int similarAdjacentTileRequirementPath1Down = 0;
@@ -190,10 +190,9 @@ public class WFCController{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        grid = new Grid(tilesAcross, tilesDown, options, optionMap, optionCompatibilityMap, similarAdjacentTileRequirements);
+        grid = new Grid(tilesAcross, tilesDown, options, optionMap, optionCompatibilityMap);
         waveFunctionCollapse(false);
-        grid.cleanUp();
-        waveFunctionCollapse(true);
+        cleanUp();
     }
 
     private void updateFile() {
@@ -224,6 +223,14 @@ public class WFCController{
         boolean keepGoing = true;
         while (keepGoing){
             keepGoing = grid.collapse(cleanUp);
+        }
+    }
+    private void cleanUp(){
+        System.out.println("Cleaning up...");
+        boolean keepGoing = true;
+        while (keepGoing){
+            keepGoing = grid.cleanUp(similarAdjacentTileRequirements);
+            waveFunctionCollapse(true);
         }
     }
 }

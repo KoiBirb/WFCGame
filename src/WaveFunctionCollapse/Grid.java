@@ -48,7 +48,7 @@ public class Grid{
         return mapOrdered.get(new SecureRandom().nextInt(mapOrdered.size()));
     }
 
-    public boolean collapse() {
+    public boolean collapse(boolean cleanUp) {
         Cell cell = getCell();
         if (cell != null) {
             if (cell.collapse()) {
@@ -58,7 +58,11 @@ public class Grid{
                         tilesCollapsed++;
                     }
                 }
-                System.out.println("Tiles collapsed: " + tilesCollapsed + " (" + tilesCollapsed / tilePercentDivider + "%)");
+                if (cleanUp) {
+                    System.out.println("Cleaning up" + " (" + tilesCollapsed / tilePercentDivider + "%)");
+                } else {
+                    System.out.println("Creating Map" + " (" + tilesCollapsed / tilePercentDivider + "%)");
+                }
             } else {
                 smallResetAdjacentTiles(cell);
             }
@@ -178,8 +182,8 @@ public class Grid{
         return newCumulativeValidOptions;
     }
 
-    public void cleanUp(ArrayList<Integer> similarAdjacentTileRequirements){
-        System.out.println("Cleaning up...");
+    public boolean cleanUp(ArrayList<Integer> similarAdjacentTileRequirements){
+        boolean tilesReset = false;
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
 
@@ -230,52 +234,13 @@ public class Grid{
                         }
                     }
                     if (similarTileTypeOccurrences < similarAdjacentTileRequirement) {
-
-                        defaultOptionsList.remove(tileOption);
-                        ArrayList<int[]> updatedAdjacentSidesOptions = defaultOptionsList;
-                        ArrayList<int[]> updatedCurrentTileOptions = new ArrayList<>();
-
-                        for (int i = 0; i < options.size(); i++) {
-                            int sameSideOccurrences;
-                            if (options.get(i) != tileOption){
-                                sameSideOccurrences = 0;
-                                for (int t = 0; t < 4; t++){
-                                    HashMap<Integer, Boolean> correctOptionCompatibilityMap = optionCompatibilityMap.get(options.get(i)[t]);
-                                    if (correctOptionCompatibilityMap.get(tileOption[t]) == Boolean.TRUE) {
-                                        sameSideOccurrences++;
-                                    }
-                                }
-                                if (sameSideOccurrences < 1) {
-                                    updatedCurrentTileOptions.add(options.get(i));
-                                }
-                            }
-                        }
-
-                        for (int i = 0; i < updatedCurrentTileOptions.size(); i++) {
-                            System.out.println(optionMap.get(updatedCurrentTileOptions.get(i)));
-                        }
-
                         smallResetAdjacentTiles(currentCell);
-
-
-                        currentCell.setOptions(updatedCurrentTileOptions);
-
-                        try {
-                            grid.get(indexUP).setOptions(updatedAdjacentSidesOptions);
-                        } catch (IndexOutOfBoundsException e){}
-                        try {
-                            grid.get(indexDOWN).setOptions(updatedAdjacentSidesOptions);
-                        } catch (IndexOutOfBoundsException e){}
-                        try {
-                            grid.get(indexLEFT).setOptions(updatedAdjacentSidesOptions);
-                        } catch (IndexOutOfBoundsException e){}
-                        try {
-                            grid.get(indexRIGHT).setOptions(updatedAdjacentSidesOptions);
-                        } catch (IndexOutOfBoundsException e){}
+                        tilesReset = true;
                     }
                 }
             }
         }
+        return tilesReset;
     }
 
     public void smallResetAdjacentTiles(Cell cell){

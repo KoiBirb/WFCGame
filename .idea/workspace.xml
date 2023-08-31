@@ -6,17 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="Changed tile set and fixed side checks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/Cell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/Grid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/tiles/TileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/WFCController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/Weights.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/WFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/WFCController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tiles/Weights.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Weights.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Map/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Assets/Map/map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Map/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Map/map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/WFCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/WFCController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets/Map/map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Map/map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/WFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/WFCController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

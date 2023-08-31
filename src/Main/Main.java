@@ -8,7 +8,7 @@ public class Main {
         JFrame window = new JFrame();
         // Change window settings
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window .setResizable(false);
+        window.setResizable(false);
         window.setTitle("2D Game");
 
         GamePanel gamePanel = new GamePanel();

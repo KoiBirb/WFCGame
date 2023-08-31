@@ -66,13 +66,11 @@ public class Cell implements Comparable<Cell>{
                     } catch (IllegalArgumentException e) {
                         return collapsed;
                     }
-                    System.out.println(optionMap.get(tileChoice));
                     options = new ArrayList<>(Collections.singletonList(tileChoice));
                 }else{
                     options = new ArrayList<>(Collections.singletonList(options.get(random.nextInt(options.size()))));
                 }
             } catch (IndexOutOfBoundsException e){
-                System.out.println("No Options To Collapse");
                 return collapsed;
             }
             collapsed = true;

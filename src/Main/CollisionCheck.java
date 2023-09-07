@@ -30,7 +30,7 @@ public class CollisionCheck {
                 tileNum1 = gp.tileM.mapTileNum[entityLeftCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
 
-                if(gp.tileM.tile[tileNum1].collision == true || gp.tileM.tile[tileNum2].collision == true){
+                if(gp.tileM.tile[tileNum1].collision || gp.tileM.tile[tileNum2].collision){
                     entity.collisionOn=true;
                 }
                 break;

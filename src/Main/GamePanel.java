@@ -1,8 +1,9 @@
 package Main;
 
-import WaveFunctionCollapse.SuperWFCControler;
+import WaveFunctionCollapse.Objects.ObjectWFCController;
 import entity.Player;
-import object.SuperObject;
+import object.dynamicObjects.SuperObject;
+import object.staticObjects.ObjectManager;
 import tiles.TileManager;
 import WaveFunctionCollapse.tiles.TileWFCController;
 
@@ -28,6 +29,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     // initiate classes
     TileManager tileM = new TileManager(this);
+    ObjectManager objM = new ObjectManager(this);
     KeyInput keyI = new KeyInput(this);
     Sound music = new Sound();
     Sound effect = new Sound();
@@ -36,7 +38,6 @@ public class GamePanel extends JPanel implements Runnable{
     public CollisionCheck cCheck = new CollisionCheck(this);
     public AssetHandler aHandler = new AssetHandler(this);
     public UI ui = new UI(this);
-
     public Player player = new Player(this,keyI);
     public SuperObject obj[] = new SuperObject[10];
 
@@ -59,7 +60,8 @@ public class GamePanel extends JPanel implements Runnable{
         aHandler.setObject();
         playMusic(0);
         gameState = playState;
-        tileM.loadMap("/Map/map.txt");
+        tileM.loadMap("/Maps/tileMap.txt");
+        objM.loadMap("/Maps/objectMap.txt");
     }
 
     public void startGameThread() {
@@ -118,6 +120,7 @@ public class GamePanel extends JPanel implements Runnable{
             Graphics2D g2 = (Graphics2D)g;
 
             tileM.draw(g2);
+            objM.draw(g2);
             for(int i = 0; i < obj.length; i++) {
                 if(obj[i] != null) {
                     obj[i].draw(g2, this);

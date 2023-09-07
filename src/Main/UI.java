@@ -1,6 +1,6 @@
 package Main;
 
-import object.Key;
+import object.dynamicObjects.Key;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

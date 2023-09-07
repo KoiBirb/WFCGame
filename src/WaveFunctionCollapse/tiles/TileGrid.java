@@ -1,5 +1,7 @@
 package WaveFunctionCollapse.tiles;
 
+import WaveFunctionCollapse.Cell;
+
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,9 +12,8 @@ public class TileGrid {
     private final int width;
     private final int height;
     private final int tilePercentDivider;
-    private final ArrayList<TileCell> grid = new ArrayList<>();
+    private final ArrayList<Cell> grid = new ArrayList<>();
     private ArrayList<int[]> options;
-    private int[] grassOption;
     HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap;
     HashMap<int[], Integer> optionMap;
 
@@ -20,7 +21,6 @@ public class TileGrid {
         this.width = width;
         this.height = height;
         this.options = options;
-        this.grassOption = options.get(0);
         this.optionMap = optionMap;
         this.optionCompatibilityMap = optionCompatibilityMap;
         this.tilePercentDivider = (int) Math.ceil(width * height / 100);
@@ -31,25 +31,25 @@ public class TileGrid {
     private void setupGrid() {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                grid.add(new TileCell(options, optionMap));
+                grid.add(new Cell(options, optionMap));
             }
         }
     }
 
-    private TileCell getCell() {
-        ArrayList<TileCell> mapOrdered = (ArrayList<TileCell>) grid.clone();
-        mapOrdered.removeIf(TileCell::isCollapsed);
+    private Cell getCell() {
+        ArrayList<Cell> mapOrdered = (ArrayList<Cell>) grid.clone();
+        mapOrdered.removeIf(Cell::isCollapsed);
         if (mapOrdered.isEmpty()) {
             return null;
         }
-        mapOrdered.sort(TileCell::compareTo);
-        TileCell leastEntropyCell = mapOrdered.get(0);
+        mapOrdered.sort(Cell::compareTo);
+        Cell leastEntropyCell = mapOrdered.get(0);
         mapOrdered.removeIf(cell -> cell.entropy() != leastEntropyCell.entropy());
         return mapOrdered.get(new SecureRandom().nextInt(mapOrdered.size()));
     }
 
     public boolean collapse(boolean cleanUp) {
-        TileCell cell = getCell();
+        Cell cell = getCell();
         if (cell != null) {
             if (cell.collapse()) {
                 int tilesCollapsed = 0;
@@ -73,7 +73,7 @@ public class TileGrid {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 int index = y * width + x;
-                TileCell currentCell = grid.get(index);
+                Cell currentCell = grid.get(index);
                 if (!currentCell.isCollapsed()) {
 
                     ArrayList<String> adjacentTiles = new ArrayList<>();
@@ -188,11 +188,10 @@ public class TileGrid {
             for (int x = 0; x < width; x++) {
 
                 int index = y * width + x;
-                TileCell currentCell = grid.get(index);
+                Cell currentCell = grid.get(index);
 
                 if (currentCell.isCollapsed()) {
 
-                    ArrayList<int[]> defaultOptionsList = this.options;
                     int[] tileOption = currentCell.getOptions().get(0);
                     int tileType = optionMap.get(tileOption);
                     int similarAdjacentTileRequirement = similarAdjacentTileRequirements.get(tileType);
@@ -243,30 +242,28 @@ public class TileGrid {
         return tilesReset;
     }
 
-    public void smallResetAdjacentTiles(TileCell cell){
+    public void smallResetAdjacentTiles(Cell cell){
         int index = grid.indexOf(cell);
-        grid.set(index, new TileCell(options, optionMap));
+        grid.set(index, new Cell(options, optionMap));
         try {
             int indexUP = index - width;
-            grid.set(indexUP, new TileCell(options, optionMap));
+            grid.set(indexUP, new Cell(options, optionMap));
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexDOWN = index + width;
-            grid.set(indexDOWN, new TileCell(options, optionMap));
+            grid.set(indexDOWN, new Cell(options, optionMap));
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexLEFT = index - 1;
-            grid.set(indexLEFT, new TileCell(options, optionMap));
+            grid.set(indexLEFT, new Cell(options, optionMap));
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexRIGHT = index + 1;
-            grid.set(indexRIGHT, new TileCell(options, optionMap));
+            grid.set(indexRIGHT, new Cell(options, optionMap));
         } catch (IndexOutOfBoundsException e){}
     }
 
-    public ArrayList<TileCell> getGrid() {
+    public ArrayList<Cell> getGrid() {
         return grid;
     }
 }
-
-

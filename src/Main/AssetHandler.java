@@ -1,7 +1,7 @@
 package Main;
 
-import object.Chest;
-import object.Key;
+import object.dynamicObjects.Chest;
+import object.dynamicObjects.Key;
 
 public class AssetHandler {
 

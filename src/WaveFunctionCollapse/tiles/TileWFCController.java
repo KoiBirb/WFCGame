@@ -1,7 +1,7 @@
 package WaveFunctionCollapse.tiles;
 
-import Main.GamePanel;
-import WaveFunctionCollapse.SuperWFCControler;
+import WaveFunctionCollapse.Cell;
+import WaveFunctionCollapse.Objects.ObjectWFCController;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,8 +10,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.HashMap;
 
-public class TileWFCController extends SuperWFCControler {
-    TileGrid grid;
+public class TileWFCController {
+    TileGrid tileGrid;
+    ObjectWFCController objectWFCC = new ObjectWFCController();
+
+    public final int gridSize = 25;
+    public final int tilesAcross = gridSize;
+    public final int tilesDown = gridSize;
+    public final int tileAmount = gridSize * gridSize;
 
     ArrayList<String> cellChoice = new ArrayList<>();
 
@@ -54,7 +60,7 @@ public class TileWFCController extends SuperWFCControler {
     int[]optionPath4Up = new int[]{2,0,0,0};
     int[]optionPath4UpDown = new int[]{2,0,2,0};
 
-    ArrayList<int[]> options = new ArrayList<>(Arrays.asList(
+    public ArrayList<int[]> options = new ArrayList<>(Arrays.asList(
             optionGrass,
 
             optionPath1, optionPath1Down, optionPath1Inverted, optionPath1Left1,
@@ -152,7 +158,7 @@ public class TileWFCController extends SuperWFCControler {
     HashMap<Integer, Boolean> optionCompatibilityMapKey0 = new HashMap<>();
     HashMap<Integer, Boolean> optionCompatibilityMapKey1 = new HashMap<>();
     HashMap<Integer, Boolean> optionCompatibilityMapKey2 = new HashMap<>();
-    HashMap<int[], Integer> optionMap = new HashMap<>();
+    public HashMap<int[], Integer> tileOptionMap = new HashMap<>();
 
     TilesWeights weight  = new TilesWeights(options);
 
@@ -174,37 +180,39 @@ public class TileWFCController extends SuperWFCControler {
         optionCompatibilityMapKey2.put(2, false);
 
        for (int i = 0; i < options.size(); i++) {
-           optionMap.put(options.get(i), i);
+           tileOptionMap.put(options.get(i), i);
        }
         weight.initialize();
-        setupFile();
+        ArrayList<Cell> finalTileGrid = setupFile();
+//        objectWFCC.initialize(finalTileGrid, options, tileOptionMap);
         updateFile();
     }
 
-    private void setupFile(){
+    private ArrayList<Cell> setupFile(){
         try{
-            File directory = new File ("src/Assets/Map");
-            File newMap = new File(directory, "map.txt");
+            File directory = new File ("src/Assets/Maps");
+            File newMap = new File(directory, "tileMap.txt");
             newMap.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        grid = new TileGrid(tilesAcross, tilesDown, options, optionMap, optionCompatibilityMap);
+        tileGrid = new TileGrid(tilesAcross, tilesDown, options, tileOptionMap, optionCompatibilityMap);
         waveFunctionCollapse(false);
         cleanUp();
+        return tileGrid.getGrid();
     }
 
     private void updateFile() {
         for (int i = 0; i < tileAmount; i++) {
 
-            ArrayList<int[]> cellOptions = grid.getGrid().get(i).getOptions();
+            ArrayList<int[]> cellOptions = tileGrid.getGrid().get(i).getOptions();
 
             if (cellOptions.size() == 1) {
-                cellChoice.add(i, String.valueOf(optionMap.get(cellOptions.get(0))));
+                cellChoice.add(i, String.valueOf(tileOptionMap.get(cellOptions.get(0))));
             }
         }
         try {
-            FileWriter mapWriter = new FileWriter("src/Assets/Map/map.txt");
+            FileWriter mapWriter = new FileWriter("src/Assets/Maps/tileMap.txt");
 
             for (int i = 0; i < tileAmount; i++){
                 if (i % gridSize != 0 || i == 0) {
@@ -221,14 +229,14 @@ public class TileWFCController extends SuperWFCControler {
     private void waveFunctionCollapse(boolean cleanUp){
         boolean keepGoing = true;
         while (keepGoing){
-            keepGoing = grid.collapse(cleanUp);
+            keepGoing = tileGrid.collapse(cleanUp);
         }
     }
     private void cleanUp(){
         System.out.println("Cleaning up...");
         boolean keepGoing = true;
         while (keepGoing){
-            keepGoing = grid.cleanUp(similarAdjacentTileRequirements);
+            keepGoing = tileGrid.cleanUp(similarAdjacentTileRequirements);
             waveFunctionCollapse(true);
         }
     }

@@ -1,8 +1,6 @@
 package WaveFunctionCollapse.Objects;
 
 import WaveFunctionCollapse.Cell;
-import WaveFunctionCollapse.tiles.TileGrid;
-import WaveFunctionCollapse.tiles.TileWFCController;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,21 +29,45 @@ public class ObjectWFCController {
     int[]optionGrass5 = new int[]{0,0,0,0};
     int[]optionGrass6 = new int[]{0,0,0,0};
 
-    ArrayList<int[]> optionsObject = new ArrayList<>(Arrays.asList( optionNull,
-            optionGrass1, optionGrass2, optionGrass3, optionGrass4, optionGrass5, optionGrass6
-            ));
+    int[]optionBush1 = new int[]{0,0,0,0};
+    int[]optionBush2 = new int[]{0,0,0,0};
+    int[]optionBush3 = new int[]{0,0,0,0};
+    int[]optionBush4 = new int[]{0,0,0,0};
+    int[]optionBush5 = new int[]{0,0,0,0};
+    int[]optionBush6 = new int[]{0,0,0,0};
 
-    HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap = new HashMap<>();
-    HashMap<Integer, Boolean> optionCompatibilityMapKey0 = new HashMap<>();
+    int[]optionCamp1 = new int[]{0,0,0,0};
+    int[]optionCamp2 = new int[]{0,0,0,0};
+
+    int[]optionStone1 = new int[]{0,0,0,0};
+    int[]optionStone2 = new int[]{0,0,0,0};
+    int[]optionStone3 = new int[]{0,0,0,0};
+    int[]optionStone4 = new int[]{0,0,0,0};
+    int[]optionStone5 = new int[]{0,0,0,0};
+    int[]optionStone6 = new int[]{0,0,0,0};
+    int[]optionStone7 = new int[]{0,0,0,0};
+    int[]optionStone8 = new int[]{0,0,0,0};
+    int[]optionStone9 = new int[]{0,0,0,0};
+    int[]optionStone10 = new int[]{0,0,0,0};
+    int[]optionStone11 = new int[]{0,0,0,0};
+    int[]optionStone12 = new int[]{0,0,0,0};
+    int[]optionStone13 = new int[]{0,0,0,0};
+    int[]optionStone14 = new int[]{0,0,0,0};
+    int[]optionStone15 = new int[]{0,0,0,0};
+    int[]optionStone16 = new int[]{0,0,0,0};
+
+    ArrayList<int[]> optionsObject = new ArrayList<>(Arrays.asList( optionNull,
+            optionGrass1, optionGrass2, optionGrass3, optionGrass4, optionGrass5, optionGrass6,
+            optionBush1,optionBush2,optionBush3,optionBush4,optionBush5,optionBush6,
+            optionCamp1,optionCamp2,
+            optionStone1,optionStone2,optionStone3,optionStone4,optionStone5,optionStone6,optionStone7,
+            optionStone8,optionStone9,optionStone10,optionStone11,optionStone12,optionStone13,optionStone14,optionStone15,optionStone16
+            ));
 
     HashMap<int[], Integer> optionMap = new HashMap<>();
 
 
     public void initialize(ArrayList<Cell> tileGrid, ArrayList<int[]> options, HashMap<int[], Integer> tileOptionMap) {
-
-        optionCompatibilityMap.put(0, optionCompatibilityMapKey0);
-
-        optionCompatibilityMapKey0.put(0, true);
 
         for (int i = 0; i < optionsObject.size(); i++) {
             optionMap.put(optionsObject.get(i), i);
@@ -64,8 +86,7 @@ public class ObjectWFCController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(tileGrid.get(0).isCollapsed());
-        grid = new ObjectGrid(tilesAcross, tilesDown, optionsObject, optionMap, optionCompatibilityMap, tileGrid, tileOptionMap);
+        grid = new ObjectGrid(tilesAcross, tilesDown, optionsObject, optionMap, tileGrid, tileOptionMap);
         waveFunctionCollapse();
     }
 

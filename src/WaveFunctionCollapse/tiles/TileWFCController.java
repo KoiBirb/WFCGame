@@ -184,7 +184,7 @@ public class TileWFCController {
        }
         weight.initialize();
         ArrayList<Cell> finalTileGrid = setupFile();
-//        objectWFCC.initialize(finalTileGrid, options, tileOptionMap);
+        objectWFCC.initialize(finalTileGrid, options, tileOptionMap);
         updateFile();
     }
 

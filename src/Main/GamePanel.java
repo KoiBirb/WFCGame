@@ -1,6 +1,5 @@
 package Main;
 
-import WaveFunctionCollapse.Objects.ObjectWFCController;
 import entity.Player;
 import object.dynamicObjects.SuperObject;
 import object.staticObjects.ObjectManager;
@@ -39,7 +38,7 @@ public class GamePanel extends JPanel implements Runnable{
     public AssetHandler aHandler = new AssetHandler(this);
     public UI ui = new UI(this);
     public Player player = new Player(this,keyI);
-    public SuperObject obj[] = new SuperObject[10];
+    public SuperObject[] obj = new SuperObject[10];
 
     // game state
     public int gameState;
@@ -49,7 +48,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     public GamePanel(){
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
-        this.setBackground(Color.black);
+        this.setBackground(Color.decode("#A6B04F"));
         this.setDoubleBuffered(true);
         this.addKeyListener(keyI);
         this.setFocusable(true);
@@ -121,11 +120,11 @@ public class GamePanel extends JPanel implements Runnable{
 
             tileM.draw(g2);
             objM.draw(g2);
-            for(int i = 0; i < obj.length; i++) {
-                if(obj[i] != null) {
-                    obj[i].draw(g2, this);
-                }
+        for (SuperObject superObject : obj) {
+            if (superObject != null) {
+                superObject.draw(g2, this);
             }
+        }
             player.draw(g2);
             ui.draw(g2);
 
@@ -138,7 +137,6 @@ public class GamePanel extends JPanel implements Runnable{
         music.loop();
         }
         public void stopMusic(){
-
             music.stop();
         }
         public void playSoundEffect(int i) {

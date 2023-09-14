@@ -11,23 +11,21 @@ public class ObjectGrid {
 
     private final int width;
     private final int height;
-    private final int tilePercentDivider;
+    private final double tilePercentDivider;
     private final ArrayList<Cell> grid = new ArrayList<>();
-    private ArrayList<int[]> options;
-    private ArrayList<Cell> finishedGrid;
-    HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap;
+    private final ArrayList<int[]> options;
+    private final ArrayList<Cell> finishedGrid;
     HashMap<int[], Integer> optionMap;
     HashMap<int[], Integer> tileOptionMap;
 
-    public ObjectGrid(int width, int height, ArrayList<int[]>options, HashMap<int[], Integer> optionMap, HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap, ArrayList<Cell> finishedGrid, HashMap<int[], Integer> tileOptionMap) {
+    public ObjectGrid(int width, int height, ArrayList<int[]>options, HashMap<int[], Integer> optionMap, ArrayList<Cell> finishedGrid, HashMap<int[], Integer> tileOptionMap) {
         this.width = width;
         this.height = height;
         this.options = options;
         this.optionMap = optionMap;
         this.tileOptionMap = tileOptionMap;
         this.finishedGrid = finishedGrid;
-        this.optionCompatibilityMap = optionCompatibilityMap;
-        this.tilePercentDivider = (int) Math.ceil(width * height / 100);
+        this.tilePercentDivider = (width * height) / 100.0;
         setupGrid();
     }
 
@@ -62,7 +60,7 @@ public class ObjectGrid {
                         tilesCollapsed++;
                     }
                 }
-                System.out.println("Placing Objects" + " (" + tilesCollapsed / tilePercentDivider + "%)");
+                System.out.println("Placing Objects: " + tilesCollapsed + " (" + (int) (tilesCollapsed / tilePercentDivider) + "%)");
                 } else {
                     smallResetAdjacentTiles(cell);
                 }
@@ -179,8 +177,7 @@ public class ObjectGrid {
         cumulativeValidOptions.forEach(option -> {
             if (tileMap.get(tile) == Boolean.TRUE) {
                 for (int[] comparativeCellOption : comparativeCellOptions) {
-                    HashMap<Integer, Boolean> correctOptionCompatibilityMap = optionCompatibilityMap.get(option[position]);
-                    if (correctOptionCompatibilityMap.get(comparativeCellOption[(position + 2) % 4]) == Boolean.TRUE) {
+                    if (option[position] == comparativeCellOption[(position + 2) % 4]) {
                         newCumulativeValidOptions.add(option);
                         break;
                     }

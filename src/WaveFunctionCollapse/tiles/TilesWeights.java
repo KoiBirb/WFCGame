@@ -133,7 +133,7 @@ public class TilesWeights {
 
     HashMap<int[], Boolean> nullCompatibilityMap = new HashMap<>();
 
-    public static HashMap<String, HashMap> tileCompatibilityHashMapFinder = new HashMap<>();
+    public static HashMap<String, HashMap<int[], Boolean>> tileCompatibilityHashMapFinder = new HashMap<>();
 
     public void initialize(){
 

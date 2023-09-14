@@ -7,7 +7,7 @@ import java.util.*;
 public class Cell implements Comparable<Cell>{
 
     private ArrayList<int[]> options;
-    public double[] weight = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    private double[] weight = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
     private boolean collapsed;
     private final SecureRandom random = new SecureRandom();
     private final HashMap<int[], Integer> optionMap;

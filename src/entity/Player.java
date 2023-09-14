@@ -7,7 +7,6 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.Objects;
 
 public class Player extends Entity{
 
@@ -36,8 +35,8 @@ public class Player extends Entity{
 
     // set spawn speed and direction
     public void setDefaultValues() {
-        worldX = gp.tileSize * 7;
-        worldY = gp.tileSize * 4;
+        worldX = gp.tileSize * 10;
+        worldY = gp.tileSize * 10;
         speed = 4;
         direction = "down";
     }
@@ -97,7 +96,8 @@ public class Player extends Entity{
             // collision check
             collisionOn = false;
             gp.cCheck.checkTile(this);
-            int objIndex = gp.cCheck.checkObject(this, true);
+            gp.cCheck.checkStaticObject(this);
+            int objIndex = gp.cCheck.checkDynamicObject(this, true);
             pickUpObject(objIndex);
 
             if(!collisionOn) {

@@ -1,7 +1,5 @@
 package object.dynamicObjects;
 
-import object.dynamicObjects.SuperObject;
-
 import javax.imageio.ImageIO;
 import java.io.IOException;
 

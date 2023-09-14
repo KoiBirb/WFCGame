@@ -11,9 +11,9 @@ public class TileGrid {
 
     private final int width;
     private final int height;
-    private final int tilePercentDivider;
+    private final double tilePercentDivider;
     private final ArrayList<Cell> grid = new ArrayList<>();
-    private ArrayList<int[]> options;
+    private final ArrayList<int[]> options;
     HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap;
     HashMap<int[], Integer> optionMap;
 
@@ -23,7 +23,7 @@ public class TileGrid {
         this.options = options;
         this.optionMap = optionMap;
         this.optionCompatibilityMap = optionCompatibilityMap;
-        this.tilePercentDivider = (int) Math.ceil(width * height / 100);
+        this.tilePercentDivider = (width * height) / 100.0;
         setupGrid();
     }
 
@@ -59,9 +59,9 @@ public class TileGrid {
                     }
                 }
                 if (cleanUp) {
-                    System.out.println("Cleaning up" + " (" + tilesCollapsed / tilePercentDivider + "%)");
+                    System.out.println("Cleaning up: " + tilesCollapsed + " (" + (int) (tilesCollapsed / tilePercentDivider) + "%)");
                 } else {
-                    System.out.println("Creating Map" + " (" + tilesCollapsed / tilePercentDivider + "%)");
+                    System.out.println("Creating Map: " + tilesCollapsed + " (" + (int) (tilesCollapsed / tilePercentDivider) + "%)");
                 }
             } else {
                 smallResetAdjacentTiles(cell);

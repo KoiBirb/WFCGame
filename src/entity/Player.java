@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
 
 public class Player extends Entity{
 
@@ -45,30 +46,30 @@ public class Player extends Entity{
     public void getPlayerImage(){
 
         try{
-            up1 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_up_1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_up_2.png"));
-            up3 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_up_3.png"));
-            up4 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_up_4.png"));
-            up5 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_up_5.png"));
-            up6 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_up_6.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_down_1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_down_2.png"));
-            down3 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_down_3.png"));
-            down4 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_down_4.png"));
-            down5 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_down_5.png"));
-            down6 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_down_6.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_left_1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_left_2.png"));
-            left3 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_left_3.png"));
-            left4 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_left_4.png"));
-            left5 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_left_5.png"));
-            left6 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_left_6.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_right_1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_right_2.png"));
-            right3 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_right_3.png"));
-            right4 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_right_4.png"));
-            right5 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_right_5.png"));
-            right6 = ImageIO.read(getClass().getResourceAsStream("/player/Walk/player_right_6.png"));
+            up1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_up_1.png")));
+            up2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_up_2.png")));
+            up3 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_up_3.png")));
+            up4 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_up_4.png")));
+            up5 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_up_5.png")));
+            up6 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_up_6.png")));
+            down1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_down_1.png")));
+            down2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_down_2.png")));
+            down3 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_down_3.png")));
+            down4 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_down_4.png")));
+            down5 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_down_5.png")));
+            down6 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_down_6.png")));
+            left1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_left_1.png")));
+            left2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_left_2.png")));
+            left3 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_left_3.png")));
+            left4 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_left_4.png")));
+            left5 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_left_5.png")));
+            left6 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_left_6.png")));
+            right1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_right_1.png")));
+            right2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_right_2.png")));
+            right3 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_right_3.png")));
+            right4 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_right_4.png")));
+            right5 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_right_5.png")));
+            right6 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/player/Walk/player_right_6.png")));
 
         }catch(IOException e) {
             e.printStackTrace();

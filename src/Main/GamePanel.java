@@ -55,10 +55,10 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
     public void setupGame() {
-        tileWFCC.initialize();
         aHandler.setObject();
-        playMusic(0);
+        tileWFCC.initialize();
         gameState = playState;
+        playMusic(0);
         tileM.loadMap("/Maps/tileMap.txt");
         objM.loadMap("/Maps/objectMap.txt");
     }
@@ -106,6 +106,7 @@ public class GamePanel extends JPanel implements Runnable{
 
         if(gameState == playState) {
             player.update();
+            objM.update();
         }
         if(gameState == pauseState){
 

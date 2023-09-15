@@ -56,12 +56,53 @@ public class ObjectWFCController {
     int[]optionStone15 = new int[]{0,0,0,0};
     int[]optionStone16 = new int[]{0,0,0,0};
 
+    int[]optionFlower1 = new int[]{0,0,0,0};
+    int[]optionFlower2 = new int[]{0,0,0,0};
+    int[]optionFlower3 = new int[]{0,0,0,0};
+    int[]optionFlower4 = new int[]{0,0,0,0};
+    int[]optionFlower5 = new int[]{0,0,0,0};
+    int[]optionFlower6 = new int[]{0,0,0,0};
+    int[]optionFlower7 = new int[]{0,0,0,0};
+    int[]optionFlower8 = new int[]{0,0,0,0};
+    int[]optionFlower9 = new int[]{0,0,0,0};
+    int[]optionFlower10 = new int[]{0,0,0,0};
+    int[]optionFlower11 = new int[]{0,0,0,0};
+    int[]optionFlower12 = new int[]{0,0,0,0};
+
+    int[]optionBox1 = new int[]{0,0,0,0};
+    int[]optionBox2 = new int[]{0,0,0,0};
+    int[]optionBox3 = new int[]{0,0,0,0};
+    int[]optionBox4 = new int[]{0,0,0,0};
+    int[]optionLamp1 = new int[]{0,0,0,0};
+    int[]optionLamp2 = new int[]{0,0,0,0};
+    int[]optionLamp3 = new int[]{0,0,0,0};
+    int[]optionLog1 = new int[]{0,0,0,0};
+    int[]optionLog2 = new int[]{0,0,0,0};
+    int[]optionLog3 = new int[]{0,0,0,0};
+    int[]optionLog4 = new int[]{0,0,0,0};
+    int[]optionTree1 = new int[]{0,0,0,0};
+    int[]optionTree2 = new int[]{0,0,0,0};
+
+    int[]optionCampfireUnlit = new int[]{0,0,0,0};
+    int[]optionCampfireLit = new int[]{0,0,0,0};
+
     ArrayList<int[]> optionsObject = new ArrayList<>(Arrays.asList( optionNull,
             optionGrass1, optionGrass2, optionGrass3, optionGrass4, optionGrass5, optionGrass6,
+
             optionBush1,optionBush2,optionBush3,optionBush4,optionBush5,optionBush6,
+
             optionCamp1,optionCamp2,
+
             optionStone1,optionStone2,optionStone3,optionStone4,optionStone5,optionStone6,optionStone7,
-            optionStone8,optionStone9,optionStone10,optionStone11,optionStone12,optionStone13,optionStone14,optionStone15,optionStone16
+            optionStone8,optionStone9,optionStone10,optionStone11,optionStone12,optionStone13,optionStone14,optionStone15,optionStone16,
+
+            optionFlower1,optionFlower2,optionFlower3,optionFlower4,optionFlower5,optionFlower6,optionFlower7,
+            optionFlower8,optionFlower9, optionFlower10,optionFlower11,optionFlower12,
+
+            optionBox1,optionBox2,optionBox3,optionBox4,optionLamp1,optionLamp2,optionLamp3,
+            optionLog1,optionLog2,optionLog3,optionLog4,optionTree1,optionTree2,
+
+            optionCampfireUnlit,optionCampfireLit
             ));
 
     HashMap<int[], Integer> optionMap = new HashMap<>();

@@ -33,7 +33,7 @@ public class ObjectGrid {
     private void setupGrid() {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                grid.add(new Cell(options, optionMap));
+                grid.add(new Cell(options, optionMap, 58));
             }
         }
     }
@@ -51,7 +51,29 @@ public class ObjectGrid {
     }
 
     public boolean collapse() {
+        ArrayList<Integer> cellsToCheck = new ArrayList<>();
         Cell cell = getCell();
+        int collapsedCellIndex = grid.indexOf(cell);
+
+        int centerIndexUP = collapsedCellIndex - width;
+        if (centerIndexUP >= 0) {
+            cellsToCheck.add(centerIndexUP);
+        }
+
+        int centerIndexDOWN = collapsedCellIndex + width;
+        if (centerIndexDOWN < grid.size()) {
+            cellsToCheck.add(centerIndexDOWN);
+        }
+
+        int centerIndexLEFT = collapsedCellIndex - 1;
+        if (collapsedCellIndex % width != 0) {
+            cellsToCheck.add(centerIndexLEFT);
+        }
+
+        int centerIndexRIGHT = collapsedCellIndex + 1;
+        if ((collapsedCellIndex + 1) % width != 0) {
+            cellsToCheck.add(centerIndexRIGHT);
+        }
         if (cell != null) {
             if (cell.collapse()) {
                 int tilesCollapsed = 0;
@@ -68,93 +90,91 @@ public class ObjectGrid {
                 return false;
         }
 
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                int index = y * width + x;
+        while (cellsToCheck.size() != 0) {
+            for (int i = 0; i < cellsToCheck.size(); i++) {
+                int index = cellsToCheck.get(i);
                 Cell currentCell = grid.get(index);
                 if (!currentCell.isCollapsed()) {
 
-                    ArrayList<String> adjacentObjects = new ArrayList<>();
-                    ArrayList<int[]> adjacentTiles = new ArrayList<>();
-                    ArrayList<int[]> cumulativeValidOptions = currentCell.getOptions();
+                    ArrayList<int[]> originalOptions = currentCell.getOptions();
+                    ArrayList<Integer> adjacentObjects = new ArrayList<>();
 
                     int indexUP = index - width;
                     try {
-                        adjacentTiles.add(0, finishedGrid.get(indexUP).getOptions().get(0));
                         if (grid.get(indexUP).isCollapsed()) {
-                            adjacentObjects.add(0, String.valueOf(optionMap.get(grid.get(indexUP).getOptions().get(0))));
+                            adjacentObjects.add(0, optionMap.get(grid.get(indexUP).getOptions().get(0)));
                         } else {
-                            adjacentObjects.add(0, "n");
+                            adjacentObjects.add(0, 999);
                         }
                     } catch (IndexOutOfBoundsException e) {
-                        adjacentObjects.add(0, "n");
-                        adjacentTiles.add(0, null);
+                        adjacentObjects.add(0, 999);
                     }
-                    if (indexUP >= 0) {
-                        grid.get(indexUP).getOptions();
-                        if (!Objects.equals(adjacentObjects.get(0), "n")) {
-                            cumulativeValidOptions =
-                                findAllowedOptionsObjects(cumulativeValidOptions, grid.get(indexUP).getOptions(), 0, adjacentObjects.get(0), adjacentTiles.get(0));
-                            }
-                        }
 
                     int indexDOWN = index + width;
                     try {
-                        adjacentTiles.add(1, finishedGrid.get(indexDOWN).getOptions().get(0));
                         if (grid.get(indexDOWN).isCollapsed()) {
-                            adjacentObjects.add(1, String.valueOf(optionMap.get(grid.get(indexDOWN).getOptions().get(0))));
+                            adjacentObjects.add(1, optionMap.get(grid.get(indexDOWN).getOptions().get(0)));
                         } else {
-                            adjacentObjects.add(1, "n");
+                            adjacentObjects.add(1, 999);
                         }
                     } catch (IndexOutOfBoundsException e) {
-                        adjacentObjects.add(1, "n");
-                        adjacentTiles.add(1, null);
+                        adjacentObjects.add(1, 999);
                     }
-                    if (indexDOWN < grid.size()) {
-                        if (!Objects.equals(adjacentObjects.get(1), "n")) {
-                                cumulativeValidOptions =
-                                        findAllowedOptionsObjects(cumulativeValidOptions, grid.get(indexDOWN).getOptions(), 2, adjacentObjects.get(1), adjacentTiles.get(1));
-                            }
-                        }
 
                     int indexLEFT = index - 1;
                     try {
-                        adjacentTiles.add(2, finishedGrid.get(indexLEFT).getOptions().get(0));
                         if (grid.get(indexLEFT).isCollapsed()) {
-                            adjacentObjects.add(2, String.valueOf(optionMap.get(grid.get(indexLEFT).getOptions().get(0))));
+                            adjacentObjects.add(2, optionMap.get(grid.get(indexLEFT).getOptions().get(0)));
                         } else {
-                            adjacentObjects.add(2, "n");
+                            adjacentObjects.add(2, 999);
                         }
                     } catch (IndexOutOfBoundsException e) {
-                        adjacentObjects.add(2, "n");
-                        adjacentTiles.add(2, null);
+                        adjacentObjects.add(2, 999);
                     }
-                    if (index % width != 0) {
-                        if (!Objects.equals(adjacentObjects.get(2), "n")) {
-                                cumulativeValidOptions =
-                                        findAllowedOptionsObjects(cumulativeValidOptions, grid.get(indexLEFT).getOptions(), 3, adjacentObjects.get(2), adjacentTiles.get(2));
-                            }
-                        }
 
                     int indexRIGHT = index + 1;
                     try {
-                        adjacentTiles.add(3, finishedGrid.get(indexRIGHT).getOptions().get(0));
                         if (grid.get(indexRIGHT).isCollapsed()) {
-                            adjacentObjects.add(3, String.valueOf(optionMap.get(grid.get(indexRIGHT).getOptions().get(0))));
+                            adjacentObjects.add(3, optionMap.get(grid.get(indexRIGHT).getOptions().get(0)));
                         } else {
-                            adjacentObjects.add(3, "n");
+                            adjacentObjects.add(3, 999);
                         }
                     } catch (IndexOutOfBoundsException e) {
-                        adjacentObjects.add(3, "n");
-                        adjacentTiles.add(3, null);
+                        adjacentObjects.add(3, 999);
                     }
-                    if ((index + 1) % width != 0) {
-                        if (!Objects.equals(adjacentObjects.get(3), "n")) {
-                                cumulativeValidOptions =
-                                        findAllowedOptionsObjects(cumulativeValidOptions, grid.get(indexRIGHT).getOptions(), 1, adjacentObjects.get(3), adjacentTiles.get(3));
-                        }
-                    }
+
+                    ArrayList<int[]> cumulativeValidOptions = findAllowedOptionsObjects(currentCell, finishedGrid.get(index).getOptions().get(0));
+
                     currentCell.setOptions(cumulativeValidOptions);
+                    if (!checkArrayList(originalOptions, cumulativeValidOptions)){
+
+                        if (indexUP >= 0) {
+                            if (!cellsToCheck.contains(indexUP)) {
+                                cellsToCheck.add(indexUP);
+                            }
+                        }
+
+                        if (indexDOWN < grid.size()) {
+                            if (!cellsToCheck.contains(indexDOWN)) {
+                                cellsToCheck.add(indexDOWN);
+                            }
+                        }
+
+                        if (index % width != 0) {
+                            if (!cellsToCheck.contains(indexLEFT)) {
+                                cellsToCheck.add(indexLEFT);
+                            }
+                        }
+
+                        if ((index + 1) % width != 0) {
+                            if (!cellsToCheck.contains(indexRIGHT)) {
+                                cellsToCheck.add(indexRIGHT);
+                            }
+                        }
+                    } else {
+                        cellsToCheck.remove((Integer) index);
+                        cellsToCheck.remove((Integer) collapsedCellIndex);
+                    }
 
                     double[] weightTileLeft = ObjectWeights.weightMap.get(adjacentObjects.get(2));
                     double[] weightTileRight = ObjectWeights.weightMap.get(adjacentObjects.get(3));
@@ -162,49 +182,65 @@ public class ObjectGrid {
                     double[] weightTileTop = ObjectWeights.weightMap.get(adjacentObjects.get(0));
 
                     double[] newWeightTile = new double[options.size()];
-                    for (int i = 0; i < newWeightTile.length; i++) {
-                        newWeightTile[i] = weightTileLeft[i] * weightTileRight[i] * weightTileBottom[i] * weightTileTop[i];
+                    for (int y = 0; y < newWeightTile.length; y++) {
+                        newWeightTile[y] = weightTileLeft[y] * weightTileRight[y] * weightTileBottom[y] * weightTileTop[y];
                     }
                     currentCell.setWeight(newWeightTile);
+                } else {
+                    cellsToCheck.remove((Integer) index);
                 }
             }
         }
         return true;
     }
-    protected ArrayList<int[]> findAllowedOptionsObjects(ArrayList<int[]> cumulativeValidOptions, ArrayList<int[]> comparativeCellOptions, int position, String object, int[] tile) {
+    protected ArrayList<int[]> findAllowedOptionsObjects(Cell currentCell, int[] tile) {
+        ArrayList<int[]> cumulativeValidOptions = currentCell.getOptions();
         ArrayList<int[]> newCumulativeValidOptions = new ArrayList<>();
-        HashMap tileMap = ObjectWeights.compatibilityMapFinder.get(object);
         cumulativeValidOptions.forEach(option -> {
+            HashMap tileMap = ObjectWeights.compatibilityMapFinder.get(optionMap.get(option));
             if (tileMap.get(tile) == Boolean.TRUE) {
-                for (int[] comparativeCellOption : comparativeCellOptions) {
-                    if (option[position] == comparativeCellOption[(position + 2) % 4]) {
-                        newCumulativeValidOptions.add(option);
-                        break;
-                    }
-                }
+                newCumulativeValidOptions.add(option);
             }
         });
         return newCumulativeValidOptions;
     }
 
+    public boolean checkArrayList (ArrayList<int[]> originalList, ArrayList<int[]> modifiedList){
+        if (originalList.size() == modifiedList.size()){
+            int correctOptions = 0;
+            for (int i = 0; i < originalList.size(); i++){
+                if (modifiedList.contains(originalList.get(i))){
+                    correctOptions++;
+                }
+            }
+            if (correctOptions == originalList.size()){
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     public void smallResetAdjacentTiles(Cell cell){
         int index = grid.indexOf(cell);
-        grid.set(index, new Cell(options, optionMap));
+        grid.set(index, new Cell(options, optionMap, 58));
         try {
             int indexUP = index - width;
-            grid.set(indexUP, new Cell(options, optionMap));
+            grid.set(indexUP, new Cell(options, optionMap, 58));
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexDOWN = index + width;
-            grid.set(indexDOWN, new Cell(options, optionMap));
+            grid.set(indexDOWN, new Cell(options, optionMap, 58));
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexLEFT = index - 1;
-            grid.set(indexLEFT, new Cell(options, optionMap));
+            grid.set(indexLEFT, new Cell(options, optionMap, 58));
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexRIGHT = index + 1;
-            grid.set(indexRIGHT, new Cell(options, optionMap));
+            grid.set(indexRIGHT, new Cell(options, optionMap, 58));
         } catch (IndexOutOfBoundsException e){}
     }
 

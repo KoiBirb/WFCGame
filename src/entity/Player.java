@@ -17,9 +17,13 @@ public class Player extends Entity{
     public final int screenX;
     public final int screenY;
     public int keyAmount = 0;
+    private boolean dash = false;
+    private int ability1CooldownReset = 180;
+    private int ability1Cooldown = 0;
 
     public Player(GamePanel gp, KeyInput keyI) {
 
+        this.maxHealth = 100;
         this.gp = gp;
         this.keyI = keyI;
 
@@ -40,6 +44,7 @@ public class Player extends Entity{
         worldY = gp.tileSize * 10;
         speed = 4;
         direction = "down";
+        currentHealth = maxHealth;
     }
 
     // load the player sprites
@@ -77,7 +82,6 @@ public class Player extends Entity{
     }
     public void update() {
 
-
         if (keyI.upPressed || keyI.downPressed ||
                 keyI.leftPressed || keyI.rightPressed){
             if(keyI.upPressed) {
@@ -91,6 +95,13 @@ public class Player extends Entity{
             }
             else if(keyI.rightPressed){
                 direction = "right";
+            }
+
+            if(keyI.abilityPressed){
+                if (ability1Cooldown == 0) {
+                    dash = true;
+                    ability1Cooldown = ability1CooldownReset;
+                }
             }
 
 
@@ -145,6 +156,32 @@ public class Player extends Entity{
         } else {
             spriteCounter = 0;
             spriteNum = 1;
+        }
+
+        if (dash){
+            if (ability1Cooldown == ability1CooldownReset) {
+                speed = 15;
+            } else if (ability1Cooldown == ability1CooldownReset - 1) {
+                speed = 20;
+            } else if (ability1Cooldown == ability1CooldownReset - 2) {
+                speed = 30;
+            } else if (ability1Cooldown == ability1CooldownReset - 3) {
+                speed = 35;
+            } else if (ability1Cooldown == ability1CooldownReset - 4) {
+                speed = 55;
+            } else if (ability1Cooldown == ability1CooldownReset - 5) {
+                speed = 60;
+            } else if (ability1Cooldown == ability1CooldownReset - 6) {
+                speed = 25;
+            } else if (ability1Cooldown == ability1CooldownReset - 7) {
+                speed = 10;
+                dash = false;
+            }
+        } else {
+            speed = 4;
+        }
+        if (ability1Cooldown != 0) {
+            ability1Cooldown--;
         }
     }
     public void pickUpObject(int i) {

@@ -2,11 +2,13 @@ package entity;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.Vector;
 
 public class Entity {
 
     public int worldX, worldY;
     public int speed;
+    public int maxHealth, currentHealth;
 
     public BufferedImage up1, up2, up3, up4, up5, up6,
             down1, down2, down3, down4, down5, down6,
@@ -20,4 +22,8 @@ public class Entity {
     public Rectangle solidArea;
     public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collisionOn = false;
+
+//    public Vector<Integer> findVector (){
+//
+//    }
 }

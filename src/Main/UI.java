@@ -17,9 +17,6 @@ public class UI {
     public UI(GamePanel gp) {
         this.gp = gp;
 
-        arial_40 = new Font("Arial", Font.PLAIN, 40);
-        Key key = new Key();
-        keyImage = key.image;
     }
 
     public void showMessage(String text){

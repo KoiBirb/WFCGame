@@ -8,45 +8,45 @@ public class TilesWeights {
     public static final double[] weightNull = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
     private final ArrayList<int[]>options;
 
-    String cellGrassCharacter = "0";
+    int cellGrassCharacter = 0;
 
-    String cellPath1Character = "1";
-    String cellPath1DownCharacter = "2";
-    String cellPath1InvertedCharacter = "3";
-    String cellPath1Left1Character = "4";
-    String cellPath1Left2Character = "5";
-    String cellPath1LeftDownCharacter = "6";
-    String cellPath1LeftRightCharacter = "7";
-    String cellPath1RightCharacter = "8";
-    String cellPath1SurroundCharacter = "9";
-    String cellPath1UpCharacter = "10";
-    String cellPath1UpDownCharacter = "11";
+    int cellPath1Character = 1;
+    int cellPath1DownCharacter = 2;
+    int cellPath1InvertedCharacter = 3;
+    int cellPath1Left1Character = 4;
+    int cellPath1Left2Character = 5;
+    int cellPath1LeftDownCharacter = 6;
+    int cellPath1LeftRightCharacter = 7;
+    int cellPath1RightCharacter = 8;
+    int cellPath1SurroundCharacter = 9;
+    int cellPath1UpCharacter = 10;
+    int cellPath1UpDownCharacter = 11;
 
-    String cellPath2Character = "12";
-    String cellPath2DownCharacter = "13";
-    String cellPath2LeftUpCharacter = "14";
-    String cellPath2LeftUpDownCharacter = "15";
-    String cellPath2Right1Character = "16";
-    String cellPath2Right2Character = "17";
-    String cellPath2UpCharacter = "18";
-    String cellPath2UpDownCharacter = "19";
+    int cellPath2Character = 12;
+    int cellPath2DownCharacter = 13;
+    int cellPath2LeftUpCharacter = 14;
+    int cellPath2LeftUpDownCharacter = 15;
+    int cellPath2Right1Character = 16;
+    int cellPath2Right2Character = 17;
+    int cellPath2UpCharacter = 18;
+    int cellPath2UpDownCharacter = 19;
 
-    String cellPath3Character = "20";
-    String cellPath3DownCharacter = "21";
-    String cellPath3LeftCharacter = "22";
-    String cellPath3LeftRightCharacter = "23";
-    String cellPath3LeftRightUpCharacter = "24";
-    String cellPath3RightCharacter = "25";
-    String cellPath3RightDownCharacter = "26";
+    int cellPath3Character = 20;
+    int cellPath3DownCharacter = 21;
+    int cellPath3LeftCharacter = 22;
+    int cellPath3LeftRightCharacter = 23;
+    int cellPath3LeftRightUpCharacter = 24;
+    int cellPath3RightCharacter = 25;
+    int cellPath3RightDownCharacter = 26;
 
-    String cellPath4Character = "27";
-    String cellPath4LeftCharacter = "28";
-    String cellPath4RightUpCharacter = "29";
-    String cellPath4RightUpDownCharacter = "30";
-    String cellPath4UpCharacter = "31";
-    String cellPath4UpDownCharacter = "32";
+    int cellPath4Character = 27;
+    int cellPath4LeftCharacter = 28;
+    int cellPath4RightUpCharacter = 29;
+    int cellPath4RightUpDownCharacter = 30;
+    int cellPath4UpCharacter = 31;
+    int cellPath4UpDownCharacter = 32;
 
-    String cellNullCharacter = "n";
+    int cellNullCharacter = 999;
 
     // Weights in percents Order from option index 0 - 32
     double[] weightGrass = {0.5, 0, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017};
@@ -91,7 +91,7 @@ public class TilesWeights {
         this.options = options;
     }
 
-    public static HashMap<String, double[]> weightMap = new HashMap<>();
+    public static HashMap<Integer, double[]> weightMap = new HashMap<>();
 
     HashMap<int[], Boolean> grassCompatibilityMap = new HashMap<>();
 
@@ -133,7 +133,7 @@ public class TilesWeights {
 
     HashMap<int[], Boolean> nullCompatibilityMap = new HashMap<>();
 
-    public static HashMap<String, HashMap<int[], Boolean>> tileCompatibilityHashMapFinder = new HashMap<>();
+    public static HashMap<Integer, HashMap<int[], Boolean>> tileCompatibilityHashMapFinder = new HashMap<>();
 
     public void initialize(){
 

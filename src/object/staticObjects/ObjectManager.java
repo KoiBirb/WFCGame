@@ -2,6 +2,7 @@ package object.staticObjects;
 
 import Main.GamePanel;
 
+import java.security.SecureRandom;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.BufferedReader;
@@ -9,6 +10,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Objects;
+
+
 
 public class ObjectManager {
 
@@ -23,7 +26,7 @@ public class ObjectManager {
         this.gp = gp;
 
         // amount of different objects
-        object = new StaticObject[58];
+        object = new StaticObject[59];
         mapObjectNum = new int [gp.maxWorldSize][gp.maxWorldSize];
 
         getTileImage();
@@ -159,7 +162,7 @@ public class ObjectManager {
             object[53] = new StaticObject();
             object[53].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Objects/Decor/Log4.png")));
             object[54] = new StaticObject();
-            object[54].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Objects/Decor/Tree1.png")));
+            object[54].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Objects/Decor/Tree2.png")));
             object[54].collision = true;
             object[55] = new StaticObject();
             object[55].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Objects/Decor/Tree2.png")));
@@ -169,6 +172,9 @@ public class ObjectManager {
             object[57] = new StaticObject();
             object[57].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/AnimatedObjects/Campfire/Lit/1.png")));
             object[57].collision = true;
+
+            object[58] = new StaticObject();
+            object[58].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Objects/Decor/Tree1.png")));
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -260,7 +266,14 @@ public class ObjectManager {
                     worldY + (gp.tileSize * 3) > gp.player.worldY - gp.player.screenY &&
                     worldY - (gp.tileSize * 3) < gp.player.worldY + gp.player.screenY) {
 
-                g2.drawImage(object[tileNum].image, screenX, screenY - object[tileNum].image.getHeight(), object[tileNum].image.getWidth() * 2, object[tileNum].image.getHeight() * 2, null);
+                int finalHeight;
+
+                if (tileNum == 56){
+                    finalHeight = (screenY - object[tileNum].image.getHeight()) + object[tileNum].randomOffsetY;
+                } else {
+                    finalHeight = screenY + object[tileNum].randomOffsetY;
+                }
+                g2.drawImage(object[tileNum].image, screenX + object[tileNum].randomOffsetX, finalHeight, object[tileNum].image.getWidth() * 2, object[tileNum].image.getHeight() * 2, null);
             }
             worldCol++;
 
@@ -268,6 +281,40 @@ public class ObjectManager {
                 worldCol = 0;
                 worldRow++;
             }
+        }
+    }
+    public void drawTree(Graphics2D g2) {
+
+        int worldCol = 0;
+        int worldRow = 0;
+
+        while (worldCol < gp.maxWorldSize && worldRow < gp.maxWorldSize) {
+            int tileNum = mapObjectNum[worldCol][worldRow];
+            if (tileNum == 54) {
+                int worldX = worldCol * gp.tileSize;
+                int worldY = worldRow * gp.tileSize;
+                int screenX = worldX - gp.player.worldX + gp.player.screenX;
+                int screenY = worldY - gp.player.worldY + gp.player.screenY;
+
+                if (worldX + (gp.tileSize * 3) > gp.player.worldX - gp.player.screenX &&
+                        worldX - (gp.tileSize * 3) < gp.player.worldX + gp.player.screenX &&
+                        worldY + (gp.tileSize * 3) > gp.player.worldY - gp.player.screenY &&
+                        worldY - (gp.tileSize * 3) < gp.player.worldY + gp.player.screenY) {
+
+                    int finalHeight = (screenY - 100) + object[54].randomOffsetY;
+                    try {
+                        g2.drawImage(ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Objects/Decor/Tree1.png"))), (screenX - 40) + object[54].randomOffsetX, finalHeight, object[58].image.getWidth() * 2, object[58].image.getHeight() * 2, null);
+                    } catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+                worldCol++;
+
+                if (worldCol == gp.maxWorldSize) {
+                    worldCol = 0;
+                    worldRow++;
+                }
         }
     }
 }

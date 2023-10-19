@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 public class KeyInput implements KeyListener {
 
     GamePanel gp;
-    public boolean upPressed, downPressed, leftPressed, rightPressed;
+    public boolean upPressed, downPressed, leftPressed, rightPressed, abilityPressed;
 
     public KeyInput(GamePanel gp) {
         this.gp = gp;
@@ -34,6 +34,9 @@ public class KeyInput implements KeyListener {
         if(code == KeyEvent.VK_D){
             rightPressed = true;
         }
+        if(code == KeyEvent.VK_E){
+            abilityPressed = true;
+        }
         if(code == KeyEvent.VK_ESCAPE){
             if(gp.gameState == gp.playState) {
                 gp.gameState = gp.pauseState;
@@ -60,6 +63,15 @@ public class KeyInput implements KeyListener {
         }
         if(code == KeyEvent.VK_D){
             rightPressed = false;
+        }
+        if(code == KeyEvent.VK_E){
+            abilityPressed = false;
+        }
+        if(code == KeyEvent.VK_1){
+            abilityPressed = false;
+        }
+        if(code == KeyEvent.VK_1){
+            abilityPressed = false;
         }
     }
 }

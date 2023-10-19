@@ -1,6 +1,7 @@
 package Main;
 
 import entity.Player;
+import entity.Slime;
 import object.dynamicObjects.SuperObject;
 import object.staticObjects.ObjectManager;
 import tiles.TileManager;
@@ -15,6 +16,8 @@ public class GamePanel extends JPanel implements Runnable{
     final int originalTileSize = 32; // 32x32 tile size
     final int scale = 2;
 
+    public int playerPOSX;
+    public int playerPOSY;
     public final int tileSize = originalTileSize * scale; // real tile size
     public final int maxScreenCol = 16; // tiles per col
     public final int maxScreenRow = 12; // tiles per row
@@ -22,7 +25,7 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; // game screen height
 
     // world map settings
-    public final int maxWorldSize = 25;
+    public final int maxWorldSize = 40;
 
     int FPS = 60; // frames per second
 
@@ -38,6 +41,7 @@ public class GamePanel extends JPanel implements Runnable{
     public AssetHandler aHandler = new AssetHandler(this);
     public UI ui = new UI(this);
     public Player player = new Player(this,keyI);
+    public Slime slime = new Slime(this, 100, 100);
     public SuperObject[] obj = new SuperObject[10];
 
     // game state
@@ -56,11 +60,14 @@ public class GamePanel extends JPanel implements Runnable{
 
     public void setupGame() {
         aHandler.setObject();
-        tileWFCC.initialize();
-        gameState = playState;
-        playMusic(0);
         tileM.loadMap("/Maps/tileMap.txt");
         objM.loadMap("/Maps/objectMap.txt");
+        double baseLoadTime = System.currentTimeMillis();
+        tileWFCC.initialize();
+        double currentLoadTime = (System.currentTimeMillis() - baseLoadTime)/1000.0;
+        System.out.println("Load Time: " + currentLoadTime + "s");
+        gameState = playState;
+        playMusic(0);
     }
 
     public void startGameThread() {
@@ -73,14 +80,13 @@ public class GamePanel extends JPanel implements Runnable{
     public void run() {
 
         // Delta method FPS clock
-        double drawInterval = 1000000000/FPS;
+        double drawInterval = 1000000000.0/FPS;
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
         long timer = 0;
         int drawCount = 0;
 
-        // while game exists update and draw screen
         while (gameThread != null) {
 
             currentTime = System.nanoTime();
@@ -106,6 +112,7 @@ public class GamePanel extends JPanel implements Runnable{
 
         if(gameState == playState) {
             player.update();
+            slime.update();
             objM.update();
         }
         if(gameState == pauseState){
@@ -126,7 +133,9 @@ public class GamePanel extends JPanel implements Runnable{
                 superObject.draw(g2, this);
             }
         }
+            slime.draw(g2);
             player.draw(g2);
+            objM.drawTree(g2);
             ui.draw(g2);
 
             g2.dispose();

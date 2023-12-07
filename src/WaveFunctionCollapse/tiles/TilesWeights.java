@@ -49,43 +49,10 @@ public class TilesWeights {
     int cellNullCharacter = 999;
 
     // Weights in percents Order from option index 0 - 32
-    double[] weightGrass = {0.5, 0, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017};
+    double[] weightGrass = {0.25, 0, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017};
 
-    double[] weightPath1 = {0, 0.03, 0.03, 0.001, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03};
-    double[] weightPath1Down = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath1Inverted = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath1Left1 = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath1Left2 = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath1LeftDown = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath1LeftRight = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath1Right = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath1Surround = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath1Up = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath1UpDown = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-
-    double[] weightPath2 = {0, 0.03, 0.03, 0.001, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03};
-    double[] weightPath2Down = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath2LeftUp = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath2LeftUpDown = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath2Right1 = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath2Right2 = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath2Up = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath2UpDown = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-
-    double[] weightPath3 = {0, 0.03, 0.03, 0.001, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03};
-    double[] weightPath3Down = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath3Left = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath3LeftRight = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath3LeftRightUp = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath3Right = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath3RightDown = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-
-    double[] weightPath4 = {0, 0.03, 0.03, 0.001, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03};
-    double[] weightPath4Left = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath4RightUp = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath4RightUpDown = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath4Up = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
-    double[] weightPath4UpDown = {0.5, 0.016, 0.016, 0.001, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
+    double[] weightPath = {0, 0.03, 0.03, 0, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03};
+    double[] weightPathWGrass = {0.25, 0.016, 0.017, 0, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
 
     public TilesWeights(ArrayList<int[]>options){
         this.options = options;
@@ -238,41 +205,41 @@ public class TilesWeights {
 
         weightMap.put(cellGrassCharacter, weightGrass);
 
-        weightMap.put(cellPath1Character, weightPath1);
-        weightMap.put(cellPath1DownCharacter, weightPath1Down);
-        weightMap.put(cellPath1InvertedCharacter, weightPath1Inverted);
-        weightMap.put(cellPath1Left1Character, weightPath1Left1);
-        weightMap.put(cellPath1Left2Character, weightPath1Left2);
-        weightMap.put(cellPath1LeftDownCharacter, weightPath1LeftDown);
-        weightMap.put(cellPath1LeftRightCharacter, weightPath1LeftRight);
-        weightMap.put(cellPath1RightCharacter, weightPath1Right);
-        weightMap.put(cellPath1SurroundCharacter, weightPath1Surround);
-        weightMap.put(cellPath1UpCharacter, weightPath1Up);
-        weightMap.put(cellPath1UpDownCharacter, weightPath1UpDown);
+        weightMap.put(cellPath1Character, weightPath);
+        weightMap.put(cellPath1DownCharacter, weightPathWGrass);
+        weightMap.put(cellPath1InvertedCharacter, weightPathWGrass);
+        weightMap.put(cellPath1Left1Character, weightPathWGrass);
+        weightMap.put(cellPath1Left2Character, weightPathWGrass);
+        weightMap.put(cellPath1LeftDownCharacter, weightPathWGrass);
+        weightMap.put(cellPath1LeftRightCharacter, weightPathWGrass);
+        weightMap.put(cellPath1RightCharacter, weightPathWGrass);
+        weightMap.put(cellPath1SurroundCharacter, weightPathWGrass);
+        weightMap.put(cellPath1UpCharacter, weightPathWGrass);
+        weightMap.put(cellPath1UpDownCharacter, weightPathWGrass);
 
-        weightMap.put(cellPath2Character, weightPath2);
-        weightMap.put(cellPath2DownCharacter, weightPath2Down);
-        weightMap.put(cellPath2LeftUpCharacter, weightPath2LeftUp);
-        weightMap.put(cellPath2LeftUpDownCharacter, weightPath2LeftUpDown);
-        weightMap.put(cellPath2Right1Character, weightPath2Right1);
-        weightMap.put(cellPath2Right2Character, weightPath2Right2);
-        weightMap.put(cellPath2UpCharacter, weightPath2Up);
-        weightMap.put(cellPath2UpDownCharacter, weightPath2UpDown);
+        weightMap.put(cellPath2Character, weightPath);
+        weightMap.put(cellPath2DownCharacter, weightPathWGrass);
+        weightMap.put(cellPath2LeftUpCharacter, weightPathWGrass);
+        weightMap.put(cellPath2LeftUpDownCharacter, weightPathWGrass);
+        weightMap.put(cellPath2Right1Character, weightPathWGrass);
+        weightMap.put(cellPath2Right2Character, weightPathWGrass);
+        weightMap.put(cellPath2UpCharacter, weightPathWGrass);
+        weightMap.put(cellPath2UpDownCharacter, weightPathWGrass);
 
-        weightMap.put(cellPath3Character, weightPath3);
-        weightMap.put(cellPath3DownCharacter, weightPath3Down);
-        weightMap.put(cellPath3LeftCharacter, weightPath3Left);
-        weightMap.put(cellPath3LeftRightCharacter, weightPath3LeftRight);
-        weightMap.put(cellPath3LeftRightUpCharacter, weightPath3LeftRightUp);
-        weightMap.put(cellPath3RightCharacter, weightPath3Right);
-        weightMap.put(cellPath3RightDownCharacter, weightPath3RightDown);
+        weightMap.put(cellPath3Character, weightPath);
+        weightMap.put(cellPath3DownCharacter, weightPathWGrass);
+        weightMap.put(cellPath3LeftCharacter, weightPathWGrass);
+        weightMap.put(cellPath3LeftRightCharacter, weightPathWGrass);
+        weightMap.put(cellPath3LeftRightUpCharacter, weightPathWGrass);
+        weightMap.put(cellPath3RightCharacter, weightPathWGrass);
+        weightMap.put(cellPath3RightDownCharacter, weightPathWGrass);
 
-        weightMap.put(cellPath4Character, weightPath4);
-        weightMap.put(cellPath4LeftCharacter, weightPath4Left);
-        weightMap.put(cellPath4RightUpCharacter, weightPath4RightUp);
-        weightMap.put(cellPath4RightUpDownCharacter, weightPath4RightUpDown);
-        weightMap.put(cellPath4UpCharacter, weightPath4Up);
-        weightMap.put(cellPath4UpDownCharacter, weightPath4UpDown);
+        weightMap.put(cellPath4Character, weightPath);
+        weightMap.put(cellPath4LeftCharacter, weightPathWGrass);
+        weightMap.put(cellPath4RightUpCharacter, weightPathWGrass);
+        weightMap.put(cellPath4RightUpDownCharacter, weightPathWGrass);
+        weightMap.put(cellPath4UpCharacter, weightPathWGrass);
+        weightMap.put(cellPath4UpDownCharacter, weightPathWGrass);
 
         weightMap.put(cellNullCharacter, weightNull);
     }

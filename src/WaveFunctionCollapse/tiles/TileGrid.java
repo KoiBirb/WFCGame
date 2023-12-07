@@ -5,7 +5,6 @@ import WaveFunctionCollapse.Cell;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class TileGrid {
 
@@ -16,6 +15,8 @@ public class TileGrid {
     private final ArrayList<int[]> options;
     HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap;
     HashMap<int[], Integer> optionMap;
+    HashMap<Integer, double[]> weightMap = TilesWeights.weightMap;
+    HashMap<Integer, HashMap<int[], Boolean>> tileCompatibilityHashMapFinder = TilesWeights.tileCompatibilityHashMapFinder;
 
     public TileGrid(int width, int height, ArrayList<int[]>options, HashMap<int[], Integer> optionMap, HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap) {
         this.width = width;
@@ -31,7 +32,7 @@ public class TileGrid {
     private void setupGrid() {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                grid.add(new Cell(options, optionMap, 33));
+                grid.add(new Cell(options, optionMap));
             }
         }
     }
@@ -50,6 +51,7 @@ public class TileGrid {
 
     public boolean collapse(boolean cleanUp) {
         ArrayList<Integer> cellsToCheck = new ArrayList<>();
+        ArrayList<Integer> cellsChecked = new ArrayList<>();
         Cell cell = getCell();
         int collapsedCellIndex = grid.indexOf(cell);
 
@@ -87,7 +89,7 @@ public class TileGrid {
                     System.out.println("Creating Map: " + tilesCollapsed + " (" + (int) (tilesCollapsed / tilePercentDivider) + "%)");
                 }
             } else {
-                smallResetAdjacentTiles(cell);
+                resetAdjacentTiles(cell);
             }
         } else {
             return false;
@@ -137,37 +139,39 @@ public class TileGrid {
                     if (!checkArrayList(originalOptions, cumulativeValidOptions)){
 
                         if (indexUP >= 0) {
-                            if (!cellsToCheck.contains(indexUP)) {
+                            if (!(cellsToCheck.contains(indexUP) && cellsChecked.contains(indexUP))) {
                                 cellsToCheck.add(indexUP);
                             }
                         }
 
                         if (indexDOWN < grid.size()) {
-                            if (!cellsToCheck.contains(indexDOWN)) {
+                            if (!(cellsToCheck.contains(indexDOWN) && cellsChecked.contains(indexDOWN))) {
                                 cellsToCheck.add(indexDOWN);
                             }
                         }
 
                         if (index % width != 0) {
-                            if (!cellsToCheck.contains(indexLEFT)) {
+                            if (!(cellsToCheck.contains(indexLEFT) && cellsChecked.contains(indexLEFT))) {
                                 cellsToCheck.add(indexLEFT);
                             }
                         }
 
                         if ((index + 1) % width != 0) {
-                            if (!cellsToCheck.contains(indexRIGHT)) {
+                            if (!(cellsToCheck.contains(indexRIGHT) && cellsChecked.contains(indexRIGHT))) {
                                 cellsToCheck.add(indexRIGHT);
                             }
                         }
                     } else {
                         cellsToCheck.remove((Integer) index);
+                        cellsChecked.add(index);
                         cellsToCheck.remove((Integer) collapsedCellIndex);
+                        cellsChecked.add(collapsedCellIndex);
                     }
 
-                    double[] weightTileLeft = TilesWeights.weightMap.get(adjacentTiles.get(2));
-                    double[] weightTileRight = TilesWeights.weightMap.get(adjacentTiles.get(3));
-                    double[] weightTileBottom = TilesWeights.weightMap.get(adjacentTiles.get(1));
-                    double[] weightTileTop = TilesWeights.weightMap.get(adjacentTiles.get(0));
+                    double[] weightTileLeft = weightMap.get(adjacentTiles.get(2));
+                    double[] weightTileRight = weightMap.get(adjacentTiles.get(3));
+                    double[] weightTileBottom = weightMap.get(adjacentTiles.get(1));
+                    double[] weightTileTop = weightMap.get(adjacentTiles.get(0));
 
                     double[] newWeightTile = new double[33];
 
@@ -177,6 +181,7 @@ public class TileGrid {
                     currentCell.setWeight(newWeightTile);
                 } else {
                     cellsToCheck.remove((Integer) index);
+                    cellsChecked.add(index);
                 }
             }
         }
@@ -185,7 +190,7 @@ public class TileGrid {
 
     protected ArrayList<int[]> findAllowedOptions(ArrayList<int[]> cumulativeValidOptions, ArrayList<int[]> comparativeCellOptions, int position, int tile) {
         ArrayList<int[]> newCumulativeValidOptions = new ArrayList<>();
-        HashMap tileMap = TilesWeights.tileCompatibilityHashMapFinder.get(tile);
+        HashMap tileMap = tileCompatibilityHashMapFinder.get(tile);
         cumulativeValidOptions.forEach(option -> {
             if (tileMap.get(option) == Boolean.TRUE) {
                 for (int[] comparativeCellOption : comparativeCellOptions) {
@@ -282,43 +287,43 @@ public class TileGrid {
                     int similarAdjacentTileRequirement = similarAdjacentTileRequirements.get(tileType);
                     int similarTileTypeOccurrences = 0;
 
-                    ArrayList<String> adjacentTiles = new ArrayList<>();
+                    ArrayList<Integer> adjacentTiles = new ArrayList<>();
 
                     int indexUP = index - width;
                     try {
-                        adjacentTiles.add(0, String.valueOf(optionMap.get(grid.get(indexUP).getOptions().get(0))));
+                        adjacentTiles.add(0, optionMap.get(grid.get(indexUP).getOptions().get(0)));
                     } catch (IndexOutOfBoundsException e) {
-                        adjacentTiles.add(0, "n");
+                        adjacentTiles.add(0, 999);
                     }
 
                     int indexDOWN = index + width;
                     try {
-                        adjacentTiles.add(1, String.valueOf(optionMap.get(grid.get(indexDOWN).getOptions().get(0))));
+                        adjacentTiles.add(1, optionMap.get(grid.get(indexDOWN).getOptions().get(0)));
                     } catch (IndexOutOfBoundsException e) {
-                        adjacentTiles.add(1, "n");
+                        adjacentTiles.add(1, 999);
                     }
 
                     int indexLEFT = index - 1;
                     try {
-                        adjacentTiles.add(2, String.valueOf(optionMap.get(grid.get(indexLEFT).getOptions().get(0))));
+                        adjacentTiles.add(2, optionMap.get(grid.get(indexLEFT).getOptions().get(0)));
                     } catch (IndexOutOfBoundsException e) {
-                        adjacentTiles.add(2, "n");
+                        adjacentTiles.add(2, 999);
                     }
 
                     int indexRIGHT = index + 1;
                     try {
-                        adjacentTiles.add(3, String.valueOf(optionMap.get(grid.get(indexRIGHT).getOptions().get(0))));
+                        adjacentTiles.add(3, optionMap.get(grid.get(indexRIGHT).getOptions().get(0)));
                     } catch (IndexOutOfBoundsException e) {
-                        adjacentTiles.add(3, "n");
+                        adjacentTiles.add(3, 999);
                     }
 
                     for (int i = 0; i < adjacentTiles.size(); i++) {
-                        if (adjacentTiles.get(i).equals(String.valueOf(tileType))) {
+                        if (adjacentTiles.get(i) == tileType) {
                             similarTileTypeOccurrences++;
                         }
                     }
                     if (similarTileTypeOccurrences < similarAdjacentTileRequirement) {
-                        smallResetAdjacentTiles(currentCell);
+                        resetAdjacentTiles(currentCell);
                         tilesReset = true;
                     }
                 }
@@ -327,25 +332,33 @@ public class TileGrid {
         return tilesReset;
     }
 
-    public void smallResetAdjacentTiles(Cell cell){
+    public void resetAdjacentTiles(Cell cell){
+
         int index = grid.indexOf(cell);
-        grid.set(index, new Cell(options, optionMap, 33));
+        resetCell(index);
         try {
             int indexUP = index - width;
-            grid.set(indexUP, new Cell(options, optionMap, 33));
+            resetCell(indexUP);
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexDOWN = index + width;
-            grid.set(indexDOWN, new Cell(options, optionMap, 33));
+            resetCell(indexDOWN);
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexLEFT = index - 1;
-            grid.set(indexLEFT, new Cell(options, optionMap, 33));
+            resetCell(indexLEFT);
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexRIGHT = index + 1;
-            grid.set(indexRIGHT, new Cell(options, optionMap, 33));
+            resetCell(indexRIGHT);
         } catch (IndexOutOfBoundsException e){}
+    }
+
+    public void resetCell (int index){
+        Cell currentCell = grid.get(index);
+        currentCell.setOptions(options);
+        currentCell.setState();
+        currentCell.setWeight(new double[]{1});
     }
 
     public ArrayList<Cell> getGrid() {

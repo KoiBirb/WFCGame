@@ -43,6 +43,25 @@ public class Slime extends Entity{
             up4 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up4.png")));
             up5 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up5.png")));
             up6 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up6.png")));
+            down1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up1.png")));
+            down2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up2.png")));
+            down3 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up3.png")));
+            down4 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up4.png")));
+            down5 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up5.png")));
+            down6 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up6.png")));
+            left1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up1.png")));
+            left2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up2.png")));
+            left3 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up3.png")));
+            left4 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up4.png")));
+            left5 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up5.png")));
+            left6 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up6.png")));
+            right1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up1.png")));
+            right2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up2.png")));
+            right3 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up3.png")));
+            right4 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up4.png")));
+            right5 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up5.png")));
+            right6 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up6.png")));
+
 //            down1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/down1.png")));
 //            down2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/down2.png")));
 //            down3 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/down3.png")));
@@ -67,17 +86,35 @@ public class Slime extends Entity{
         }
    }
 
+   public double findAngle(){
+        double run = gp.player.worldX - worldX ;
+        double rise = worldY - gp.player.worldY;
+        int initialAngle = 0;
+
+        if (run > 0 && rise < 0){
+            initialAngle = 90;
+        } else if(run < 0 && rise < 0){
+            initialAngle = 180;
+        } else if (run < 0 && rise > 0) {
+            initialAngle = 270;
+        }
+       System.out.println("run: " + run + " " + "rise" + rise);
+
+       System.out.println(initialAngle);
+
+        double slope = run / rise;
+        return (int) ((Math.tanh(slope) * 100) + initialAngle);
+   }
+
     public void update(){
-
-
-
-
-
+        System.out.println(findAngle());
     }
 
     public void draw(Graphics2D g2) {
 
         BufferedImage image = null;
+
+
 
         switch (direction) {
             case "up":
@@ -162,10 +199,31 @@ public class Slime extends Entity{
                 break;
         }
 
-        int screenX = worldX - gp.player.worldX + gp.player.screenX;
-        int screenY = worldY - gp.player.worldY + gp.player.screenY;
+        collisionOn = false;
+        gp.cCheck.checkTile(this);
+
+        if(!collisionOn) {
+            switch (direction) {
+                case "up":
+                    worldY -= speed;
+                    break;
+                case "down":
+                    worldY += speed;
+                    break;
+                case "left":
+                    worldX -= speed;
+                    break;
+                case "right":
+                    worldX += speed;
+                    break;
+            }
+        }
+
+        int screenX = worldX - gp.player.worldX;
+        int screenY = worldY - gp.player.worldY;
 
         g2.drawImage(image, screenX, screenY, (gp.tileSize*2), (gp.tileSize*2), null);
+
     }
 
 }

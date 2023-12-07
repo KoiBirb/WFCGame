@@ -5,7 +5,6 @@ import WaveFunctionCollapse.Cell;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 
 public class ObjectGrid {
 
@@ -33,7 +32,7 @@ public class ObjectGrid {
     private void setupGrid() {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                grid.add(new Cell(options, optionMap, 58));
+                grid.add(new Cell(options, optionMap));
             }
         }
     }
@@ -84,7 +83,7 @@ public class ObjectGrid {
                 }
                 System.out.println("Placing Objects: " + tilesCollapsed + " (" + (int) (tilesCollapsed / tilePercentDivider) + "%)");
                 } else {
-                    smallResetAdjacentTiles(cell);
+                    resetAdjacentTiles(cell);
                 }
             } else {
                 return false;
@@ -223,25 +222,33 @@ public class ObjectGrid {
         }
     }
 
-    public void smallResetAdjacentTiles(Cell cell){
+    public void resetAdjacentTiles(Cell cell){
+
         int index = grid.indexOf(cell);
-        grid.set(index, new Cell(options, optionMap, 58));
+        resetCell(index);
         try {
             int indexUP = index - width;
-            grid.set(indexUP, new Cell(options, optionMap, 58));
+            resetCell(indexUP);
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexDOWN = index + width;
-            grid.set(indexDOWN, new Cell(options, optionMap, 58));
+            resetCell(indexDOWN);
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexLEFT = index - 1;
-            grid.set(indexLEFT, new Cell(options, optionMap, 58));
+            resetCell(indexLEFT);
         } catch (IndexOutOfBoundsException e){}
         try {
             int indexRIGHT = index + 1;
-            grid.set(indexRIGHT, new Cell(options, optionMap, 58));
+            resetCell(indexRIGHT);
         } catch (IndexOutOfBoundsException e){}
+    }
+
+    public void resetCell (int index){
+        Cell currentCell = grid.get(index);
+        currentCell.setOptions(options);
+        currentCell.setState();
+        currentCell.setWeight(new double[]{1});
     }
 
     public ArrayList<Cell> getGrid() {

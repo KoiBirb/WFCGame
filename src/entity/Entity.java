@@ -23,7 +23,5 @@ public class Entity {
     public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collisionOn = false;
 
-//    public Vector<Integer> findVector (){
-//
-//    }
+
 }

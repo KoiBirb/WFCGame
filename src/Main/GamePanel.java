@@ -41,7 +41,7 @@ public class GamePanel extends JPanel implements Runnable{
     public AssetHandler aHandler = new AssetHandler(this);
     public UI ui = new UI(this);
     public Player player = new Player(this,keyI);
-    public Slime slime = new Slime(this, 100, 100);
+    public Slime slime = new Slime(this, 600, 800);
     public SuperObject[] obj = new SuperObject[10];
 
     // game state

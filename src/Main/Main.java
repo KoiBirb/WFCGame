@@ -12,15 +12,16 @@ public class Main {
         window.setTitle("2D Game");
 
         GamePanel gamePanel = new GamePanel();
-        window.add(gamePanel);
 
-        // Allows the window to be resized
+
+        // place objects
+        gamePanel.setupGame();
+
+        window.add(gamePanel);
         window.pack();
         window.setLocationRelativeTo(null);
         window.setVisible(true);
 
-        // place objects
-        gamePanel.setupGame();
         // start game
         gamePanel.startGameThread();
     }

@@ -3,6 +3,8 @@ package WaveFunctionCollapse.tiles;
 import WaveFunctionCollapse.Cell;
 import WaveFunctionCollapse.Objects.ObjectWFCController;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +16,7 @@ public class TileWFCController {
     TileGrid tileGrid;
     ObjectWFCController objectWFCC = new ObjectWFCController();
 
-    public final int gridSize = 40;
+    public final int gridSize = 20;
     public final int tilesAcross = gridSize;
     public final int tilesDown = gridSize;
     public final int tileAmount = gridSize * gridSize;
@@ -240,5 +242,6 @@ public class TileWFCController {
             waveFunctionCollapse(true);
         }
     }
+
 }
 

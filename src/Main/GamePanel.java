@@ -1,7 +1,7 @@
 package Main;
 
+import entity.Entity;
 import entity.Player;
-import entity.Slime;
 import object.dynamicObjects.SuperObject;
 import object.staticObjects.ObjectManager;
 import tiles.TileManager;
@@ -14,10 +14,8 @@ public class GamePanel extends JPanel implements Runnable{
 
     // More screen settings
     final int originalTileSize = 32; // 32x32 tile size
-    final int scale = 2;
+    public final int scale = 2;
 
-    public int playerPOSX;
-    public int playerPOSY;
     public final int tileSize = originalTileSize * scale; // real tile size
     public final int maxScreenCol = 16; // tiles per col
     public final int maxScreenRow = 12; // tiles per row
@@ -25,7 +23,7 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; // game screen height
 
     // world map settings
-    public final int maxWorldSize = 40;
+    public final int maxWorldSize = 20;
 
     int FPS = 60; // frames per second
 
@@ -41,8 +39,8 @@ public class GamePanel extends JPanel implements Runnable{
     public AssetHandler aHandler = new AssetHandler(this);
     public UI ui = new UI(this);
     public Player player = new Player(this,keyI);
-    public Slime slime = new Slime(this, 600, 800);
     public SuperObject[] obj = new SuperObject[10];
+    public Entity enemy[] = new Entity[20];
 
     // game state
     public int gameState;
@@ -58,14 +56,17 @@ public class GamePanel extends JPanel implements Runnable{
         this.setFocusable(true);
     }
 
+
+
     public void setupGame() {
         aHandler.setObject();
-        tileM.loadMap("/Maps/tileMap.txt");
-        objM.loadMap("/Maps/objectMap.txt");
+        aHandler.setEnemy();
         double baseLoadTime = System.currentTimeMillis();
         tileWFCC.initialize();
         double currentLoadTime = (System.currentTimeMillis() - baseLoadTime)/1000.0;
         System.out.println("Load Time: " + currentLoadTime + "s");
+        tileM.loadMap("/Maps/tileMap.txt");
+        objM.loadMap("/Maps/objectMap.txt");
         gameState = playState;
         playMusic(0);
     }
@@ -112,8 +113,12 @@ public class GamePanel extends JPanel implements Runnable{
 
         if(gameState == playState) {
             player.update();
-            slime.update();
             objM.update();
+            for(int i = 0; i < enemy.length; i++) {
+                if (enemy[i] != null){
+                    enemy[i].update();
+                }
+            }
         }
         if(gameState == pauseState){
 
@@ -132,8 +137,14 @@ public class GamePanel extends JPanel implements Runnable{
             if (superObject != null) {
                 superObject.draw(g2, this);
             }
+
+            for (Entity entity : enemy){
+                if (entity != null) {
+                    entity.draw(g2, this);
+                }
+            }
+
         }
-            slime.draw(g2);
             player.draw(g2);
             objM.drawTree(g2);
             ui.draw(g2);

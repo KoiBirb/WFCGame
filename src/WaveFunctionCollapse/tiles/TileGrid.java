@@ -1,12 +1,16 @@
 package WaveFunctionCollapse.tiles;
 
 import WaveFunctionCollapse.Cell;
+import entity.Entity;
+import object.dynamicObjects.SuperObject;
 
+import javax.swing.*;
+import java.awt.*;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TileGrid {
+public class TileGrid extends JPanel{
 
     private final int width;
     private final int height;
@@ -15,7 +19,7 @@ public class TileGrid {
     private final ArrayList<int[]> options;
     HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap;
     HashMap<int[], Integer> optionMap;
-    HashMap<Integer, double[]> weightMap = TilesWeights.weightMap;
+    HashMap<Integer, int[]> weightMap = TilesWeights.weightMap;
     HashMap<Integer, HashMap<int[], Boolean>> tileCompatibilityHashMapFinder = TilesWeights.tileCompatibilityHashMapFinder;
 
     public TileGrid(int width, int height, ArrayList<int[]>options, HashMap<int[], Integer> optionMap, HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap) {
@@ -25,10 +29,14 @@ public class TileGrid {
         this.optionMap = optionMap;
         this.optionCompatibilityMap = optionCompatibilityMap;
         this.tilePercentDivider = (width * height) / 100.0;
+
+        this.setPreferredSize(new Dimension(1024, 768));
+        this.setDoubleBuffered(true);
+        this.setFocusable(true);
+
+
         setupGrid();
     }
-
-
     private void setupGrid() {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
@@ -168,12 +176,12 @@ public class TileGrid {
                         cellsChecked.add(collapsedCellIndex);
                     }
 
-                    double[] weightTileLeft = weightMap.get(adjacentTiles.get(2));
-                    double[] weightTileRight = weightMap.get(adjacentTiles.get(3));
-                    double[] weightTileBottom = weightMap.get(adjacentTiles.get(1));
-                    double[] weightTileTop = weightMap.get(adjacentTiles.get(0));
+                    int[] weightTileLeft = weightMap.get(adjacentTiles.get(2));
+                    int[] weightTileRight = weightMap.get(adjacentTiles.get(3));
+                    int[] weightTileBottom = weightMap.get(adjacentTiles.get(1));
+                    int[] weightTileTop = weightMap.get(adjacentTiles.get(0));
 
-                    double[] newWeightTile = new double[33];
+                    int[] newWeightTile = new int[33];
 
                     for (int y = 0; y < newWeightTile.length; y++) {
                         newWeightTile[y] = weightTileLeft[y] * weightTileRight[y] * weightTileBottom[y] * weightTileTop[y];
@@ -354,11 +362,15 @@ public class TileGrid {
         } catch (IndexOutOfBoundsException e){}
     }
 
-    public void resetCell (int index){
+    public void resetCell (int index) {
         Cell currentCell = grid.get(index);
         currentCell.setOptions(options);
         currentCell.setState();
-        currentCell.setWeight(new double[]{1});
+        currentCell.setWeight(new int[]{1});
+    }
+
+    public void draw (Graphics g2){
+        
     }
 
     public ArrayList<Cell> getGrid() {

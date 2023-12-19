@@ -175,12 +175,12 @@ public class ObjectGrid {
                         cellsToCheck.remove((Integer) collapsedCellIndex);
                     }
 
-                    double[] weightTileLeft = ObjectWeights.weightMap.get(adjacentObjects.get(2));
-                    double[] weightTileRight = ObjectWeights.weightMap.get(adjacentObjects.get(3));
-                    double[] weightTileBottom = ObjectWeights.weightMap.get(adjacentObjects.get(1));
-                    double[] weightTileTop = ObjectWeights.weightMap.get(adjacentObjects.get(0));
+                    int[] weightTileLeft = ObjectWeights.weightMap.get(adjacentObjects.get(2));
+                    int[] weightTileRight = ObjectWeights.weightMap.get(adjacentObjects.get(3));
+                    int[] weightTileBottom = ObjectWeights.weightMap.get(adjacentObjects.get(1));
+                    int[] weightTileTop = ObjectWeights.weightMap.get(adjacentObjects.get(0));
 
-                    double[] newWeightTile = new double[options.size()];
+                    int[] newWeightTile = new int[options.size()];
                     for (int y = 0; y < newWeightTile.length; y++) {
                         newWeightTile[y] = weightTileLeft[y] * weightTileRight[y] * weightTileBottom[y] * weightTileTop[y];
                     }
@@ -248,7 +248,7 @@ public class ObjectGrid {
         Cell currentCell = grid.get(index);
         currentCell.setOptions(options);
         currentCell.setState();
-        currentCell.setWeight(new double[]{1});
+        currentCell.setWeight(new int[]{1});
     }
 
     public ArrayList<Cell> getGrid() {

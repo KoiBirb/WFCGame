@@ -22,6 +22,7 @@ public class Player extends Entity{
     private int ability1Cooldown = 0;
 
     public Player(GamePanel gp, KeyInput keyI) {
+        super(gp);
 
         this.maxHealth = 100;
         this.gp = gp;
@@ -80,6 +81,7 @@ public class Player extends Entity{
             e.printStackTrace();
         }
     }
+    @Override
     public void update() {
 
         if (keyI.upPressed || keyI.downPressed ||

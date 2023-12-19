@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class ObjectWFCController {
     ObjectGrid grid;
 
-    public final int gridSize = 40;
+    public final int gridSize = 20;
     public final int tilesAcross = gridSize;
     public final int tilesDown = gridSize;
     public final int tileAmount = gridSize * gridSize;

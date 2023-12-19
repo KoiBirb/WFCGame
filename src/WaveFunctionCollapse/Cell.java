@@ -2,13 +2,12 @@ package WaveFunctionCollapse;
 
 import java.security.SecureRandom;
 import java.util.*;
-import java.util.concurrent.atomic.DoubleAdder;
 
 
 public class Cell implements Comparable<Cell>{
 
     private ArrayList<int[]> options;
-    private double[] weight = {1};
+    private int[] weight = {1};
     private boolean collapsed;
     private Map<Double, Double> logCache;
     private final SecureRandom random = new SecureRandom();
@@ -45,9 +44,9 @@ public class Cell implements Comparable<Cell>{
         return result;
     }
 
-    private double minWeightSize(double[] weight){
-        double min = weight[0];
-        for (double v : weight) {
+    private int minWeightSize(int[] weight){
+        int min = weight[0];
+        for (int v : weight) {
             if (v < min) {
                 min = v;
             }
@@ -59,7 +58,7 @@ public class Cell implements Comparable<Cell>{
             try {
                 if (weight[0] != 1) {
                     int[] tileChoice = null;
-                    double[] collapsedTileWeight = new double[options.size()];
+                    int[] collapsedTileWeight = new int[options.size()];
                     collapsedTileWeight[0] = 1;
                     for(int i = 0; i < collapsedTileWeight.length; i++) {
                         int index = i;
@@ -69,9 +68,9 @@ public class Cell implements Comparable<Cell>{
                         collapsedTileWeight[i] = collapsedTileWeight[index] - weight[optionMap.get(options.get(i))];
                     }
                     try {
-                        double randomDouble = random.nextDouble(minWeightSize(collapsedTileWeight),1);
+                        int randomInt = random.nextInt(minWeightSize(collapsedTileWeight),1);
                         for(int i = 0; i < collapsedTileWeight.length; i++) {
-                            if (randomDouble >= collapsedTileWeight[i]){
+                            if (randomInt >= collapsedTileWeight[i]){
                                 tileChoice = options.get(i);
                                 break;
                             }
@@ -98,7 +97,7 @@ public class Cell implements Comparable<Cell>{
         this.options = options;
     }
 
-    public void setWeight(double[] weight){
+    public void setWeight(int[] weight){
         this.weight = weight;
     }
 

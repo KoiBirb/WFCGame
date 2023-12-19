@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class ObjectWeights {
 
-    public static final double[] weightNull = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    public static final int[] weightNull = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
     private final ArrayList<int[]>options;
 
     int cellBlankCharacter = 0;
@@ -78,9 +78,9 @@ public class ObjectWeights {
 
     // Weights in percents Order from option index 0 - 12
 
-    double[] weightBlank = {0.2,0.04,0.04,0.04,0.04,0.04,0.04,0.02,0.02,0.02,0.02,0.02,0.02,0.01,0.01,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.02,0.02,0.02,0.02,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.025,0.025,0.0125,0.0125};
+    int[] weightBlank = {20,4,4,4,4,4,4,2,2,2,2,2,2,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4,2,2,2,2,1,1,1,1,1,1,1,3,3,1,1};
 
-    double[] weightObject = {0.3,0.04,0.04,0.04,0.04,0.04,0.04,0.02,0.02,0.02,0.02,0.02,0.02,0.01,0.01,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.02,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.04,0.02,0.02,0.02,0.02,0.015,0.015,0.015,0.015,0.015,0.015,0.015,0.025,0.025,0.0125,0.0125};
+    int[] weightObject = {30,4,4,4,4,4,4,2,2,2,2,2,2,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,4,4,2,2,2,2,2,2,2,2,2,2,2,3,3,1,1};
     public ObjectWeights(ArrayList<int[]>options){
         this.options = options;
     }
@@ -153,7 +153,7 @@ public class ObjectWeights {
     public static HashMap<int[], Boolean> campfireUnlitTileCompatibilityMap = new HashMap<>();
     public static HashMap<int[], Boolean> campfireLitTileCompatibilityMap = new HashMap<>();
 
-    public static HashMap<Integer, double[]> weightMap = new HashMap<>();
+    public static HashMap<Integer, int[]> weightMap = new HashMap<>();
 
     public void initialize(){
 

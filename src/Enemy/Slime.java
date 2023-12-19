@@ -1,42 +1,34 @@
-package entity;
+package Enemy;
 
 import Main.GamePanel;
+import entity.Entity;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Random;
 
-public class Slime extends Entity{
+public class Slime extends Entity {
 
-    GamePanel gp;
+    public Slime(GamePanel gp) {
+        super(gp);
 
-    public Slime(GamePanel gp, int X, int Y) {
+        name = "Slime";
+        baseSpeed = 2;
+        maxHealth = 4;
+        currentHealth = maxHealth;
+        direction = "down";
 
-        this.gp = gp;
-
-        solidArea = new Rectangle(8, 16, 32, 32);
+        solidArea = new Rectangle(3, 18, 42, 30);
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
-        worldX = X;
-        worldY = Y;
-
-        setDefaultValues();
-        getPlayerImage();
+        getImage();
     }
 
-    public void setDefaultValues() {
-        maxHealth = 50;
-        speed = 3;
-        direction = "up";
-        currentHealth = maxHealth;
-    }
-
-    public void getPlayerImage(){
-
-        try{
+    public void getImage() {
+        try {
             up1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up1.png")));
             up2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up2.png")));
             up3 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/up3.png")));
@@ -80,150 +72,33 @@ public class Slime extends Entity{
 //            right4 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/right4.png")));
 //            right5 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/right5.png")));
 //            right6 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/Enemy/Slime/Walk/right6.png")));
-
-        }catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-   }
-
-   public double findAngle(){
-        double run = gp.player.worldX - worldX ;
-        double rise = worldY - gp.player.worldY;
-        int initialAngle = 0;
-
-        if (run > 0 && rise < 0){
-            initialAngle = 90;
-        } else if(run < 0 && rise < 0){
-            initialAngle = 180;
-        } else if (run < 0 && rise > 0) {
-            initialAngle = 270;
-        }
-       System.out.println("run: " + run + " " + "rise" + rise);
-
-       System.out.println(initialAngle);
-
-        double slope = run / rise;
-        return (int) ((Math.tanh(slope) * 100) + initialAngle);
-   }
-
-    public void update(){
-        System.out.println(findAngle());
     }
+    public void setAction (){
 
-    public void draw(Graphics2D g2) {
+        actionLockCounter ++;
 
-        BufferedImage image = null;
+        if (actionLockCounter == 120) {
 
+            Random random = new Random();
+            int i = random.nextInt(100)+1;
 
-
-        switch (direction) {
-            case "up":
-                if (spriteNum == 1){
-                    image = up1;
-                }
-                if (spriteNum == 2){
-                    image = up2;
-                }
-                if (spriteNum == 3){
-                    image = up3;
-                }
-                if (spriteNum == 4){
-                    image = up4;
-                }
-                if (spriteNum == 5){
-                    image = up5;
-                }
-                if (spriteNum == 6){
-                    image = up6;
-                }
-                break;
-            case "down":
-                if (spriteNum == 1){
-                    image = down1;
-                }
-                if (spriteNum == 2){
-                    image = down2;
-                }
-                if (spriteNum == 3){
-                    image = down3;
-                }
-                if (spriteNum == 4){
-                    image = down4;
-                }
-                if (spriteNum == 5){
-                    image = down5;
-                }
-                if (spriteNum == 6){
-                    image = down6;
-                }
-                break;
-            case "left":
-                if (spriteNum == 1){
-                    image = left1;
-                }
-                if (spriteNum == 2){
-                    image = left2;
-                }
-                if (spriteNum == 3){
-                    image = left3;
-                }
-                if (spriteNum == 4){
-                    image = left4;
-                }
-                if (spriteNum == 5){
-                    image = left5;
-                }
-                if (spriteNum == 6){
-                    image = left6;
-                }
-                break;
-            case "right":
-                if (spriteNum == 1){
-                    image = right1;
-                }
-                if (spriteNum == 2){
-                    image = right2;
-                }
-                if (spriteNum == 3){
-                    image = right3;
-                }
-                if (spriteNum == 4){
-                    image = right4;
-                }
-                if (spriteNum == 5){
-                    image = right5;
-                }
-                if (spriteNum == 6){
-                    image = right6;
-                }
-                break;
-        }
-
-        collisionOn = false;
-        gp.cCheck.checkTile(this);
-
-        if(!collisionOn) {
-            switch (direction) {
-                case "up":
-                    worldY -= speed;
-                    break;
-                case "down":
-                    worldY += speed;
-                    break;
-                case "left":
-                    worldX -= speed;
-                    break;
-                case "right":
-                    worldX += speed;
-                    break;
+            if(i <= 25) {
+                direction = "up";
             }
+            if (i > 25 && i <= 50) {
+                direction = "down";
+            }
+            if (i > 50 && i <= 75){
+                direction = "left";
+            }
+            if (i > 75 && i <= 100){
+                direction = "right";
+            }
+
+            actionLockCounter = 0;
         }
-
-        int screenX = worldX - gp.player.worldX;
-        int screenY = worldY - gp.player.worldY;
-
-        g2.drawImage(image, screenX, screenY, (gp.tileSize*2), (gp.tileSize*2), null);
-
     }
-
 }

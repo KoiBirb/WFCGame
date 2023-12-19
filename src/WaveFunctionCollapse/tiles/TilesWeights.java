@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class TilesWeights {
 
-    public static final double[] weightNull = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+    public static final int[] weightNull = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
     private final ArrayList<int[]>options;
 
     int cellGrassCharacter = 0;
@@ -49,16 +49,16 @@ public class TilesWeights {
     int cellNullCharacter = 999;
 
     // Weights in percents Order from option index 0 - 32
-    double[] weightGrass = {0.25, 0, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0, 0.017, 0.017, 0.017, 0.017, 0.017};
+    int[] weightGrass = {25, 0, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2};
 
-    double[] weightPath = {0, 0.03, 0.03, 0, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03, 0.03};
-    double[] weightPathWGrass = {0.25, 0.016, 0.017, 0, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016, 0.016,  0.016};
+    int[] weightPath = {0, 3, 3, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3};
+    int[] weightPathWGrass = {25, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2};
 
     public TilesWeights(ArrayList<int[]>options){
         this.options = options;
     }
 
-    public static HashMap<Integer, double[]> weightMap = new HashMap<>();
+    public static HashMap<Integer, int[]> weightMap = new HashMap<>();
 
     HashMap<int[], Boolean> grassCompatibilityMap = new HashMap<>();
 

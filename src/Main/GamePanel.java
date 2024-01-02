@@ -1,5 +1,7 @@
 package Main;
 
+import WaveFunctionCollapse.Objects.ObjectWFCController;
+import WaveFunctionCollapse.tiles.TileGrid;
 import entity.Entity;
 import entity.Player;
 import object.dynamicObjects.SuperObject;
@@ -23,21 +25,26 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenHeight = tileSize * maxScreenRow; // game screen height
 
     // world map settings
-    public final int maxWorldSize = 20;
+    TileWFCController tileWFCC = new TileWFCController();
+    public final int maxWorldSize = tileWFCC.gridSize;
 
     int FPS = 60; // frames per second
 
     // initiate classes
     TileManager tileM = new TileManager(this);
     ObjectManager objM = new ObjectManager(this);
+    public AssetHandler aHandler = new AssetHandler(this);
+
     KeyInput keyI = new KeyInput(this);
+
     Sound music = new Sound();
     Sound effect = new Sound();
+
     Thread gameThread;
-    TileWFCController tileWFCC = new TileWFCController();
-    public CollisionCheck cCheck = new CollisionCheck(this);
-    public AssetHandler aHandler = new AssetHandler(this);
+
     public UI ui = new UI(this);
+
+    public CollisionCheck cCheck = new CollisionCheck(this);
     public Player player = new Player(this,keyI);
     public SuperObject[] obj = new SuperObject[10];
     public Entity enemy[] = new Entity[20];
@@ -46,6 +53,7 @@ public class GamePanel extends JPanel implements Runnable{
     public int gameState;
     public final int playState = 1;
     public final int pauseState = 2;
+    public final int loadingState = 3;
 
 
     public GamePanel(){
@@ -61,14 +69,17 @@ public class GamePanel extends JPanel implements Runnable{
     public void setupGame() {
         aHandler.setObject();
         aHandler.setEnemy();
+        tileM.loadMap("/Maps/tileMap.txt");
+        objM.loadMap("/Maps/objectMap.txt");
+        playMusic(0);
+    }
+    public void loadMap(){
+        gameState = loadingState;
         double baseLoadTime = System.currentTimeMillis();
         tileWFCC.initialize();
         double currentLoadTime = (System.currentTimeMillis() - baseLoadTime)/1000.0;
         System.out.println("Load Time: " + currentLoadTime + "s");
-        tileM.loadMap("/Maps/tileMap.txt");
-        objM.loadMap("/Maps/objectMap.txt");
         gameState = playState;
-        playMusic(0);
     }
 
     public void startGameThread() {
@@ -131,23 +142,28 @@ public class GamePanel extends JPanel implements Runnable{
 
             Graphics2D g2 = (Graphics2D)g;
 
-            tileM.draw(g2);
-            objM.draw(g2);
-        for (SuperObject superObject : obj) {
-            if (superObject != null) {
-                superObject.draw(g2, this);
-            }
+            if (gameState == loadingState) {
+                tileWFCC.draw(g2);
+            } else {
 
-            for (Entity entity : enemy){
-                if (entity != null) {
-                    entity.draw(g2, this);
+                tileM.draw(g2);
+                objM.draw(g2);
+                for (SuperObject superObject : obj) {
+                    if (superObject != null) {
+                        superObject.draw(g2, this);
+                    }
+
+                    for (Entity entity : enemy) {
+                        if (entity != null) {
+                            entity.draw(g2, this);
+                        }
+                    }
+
                 }
+                player.draw(g2);
+                objM.drawTree(g2);
+                ui.draw(g2);
             }
-
-        }
-            player.draw(g2);
-            objM.drawTree(g2);
-            ui.draw(g2);
 
             g2.dispose();
         }

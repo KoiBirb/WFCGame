@@ -5,32 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Enemy/Slime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/AssetHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/AssetHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/CollisionCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/CollisionCheck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/tiles/TileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets/Enemy/Slime/Walk/U_Walk.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assets/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Maps/objectMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assets/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Maps/tileMap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/AssetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/AssetHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/CollisionCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/CollisionCheck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectGrid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectWFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectWFCController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectWeights.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectWeights.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileGrid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileWFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileWFCController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TilesWeights.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TilesWeights.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Slime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/staticObjects/ObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/staticObjects/ObjectManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701964026982</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added slime">
+      <created>1703015542477</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703015542478</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,6 +180,7 @@
     <MESSAGE value="Added animated objects" />
     <MESSAGE value="optimized WFC algorithm, started work on adding enemys" />
     <MESSAGE value="unbroke wfc" />
-    <option name="LAST_COMMIT_MESSAGE" value="unbroke wfc" />
+    <MESSAGE value="added slime" />
+    <option name="LAST_COMMIT_MESSAGE" value="added slime" />
   </component>
 </project>

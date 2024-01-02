@@ -24,5 +24,6 @@ public class Main {
 
         // start game
         gamePanel.startGameThread();
+        gamePanel.loadMap();
     }
 }

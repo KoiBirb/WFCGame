@@ -3,7 +3,6 @@ package WaveFunctionCollapse.tiles;
 import WaveFunctionCollapse.Cell;
 import WaveFunctionCollapse.Objects.ObjectWFCController;
 
-import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,13 +12,18 @@ import java.io.FileWriter;
 import java.util.HashMap;
 
 public class TileWFCController {
-    TileGrid tileGrid;
-    ObjectWFCController objectWFCC = new ObjectWFCController();
+    public TileGrid tileGrid;
+    public ObjectWFCController objectWFCC = new ObjectWFCController();
 
-    public final int gridSize = 20;
+    public final int gridSize = 40;
     public final int tilesAcross = gridSize;
     public final int tilesDown = gridSize;
     public final int tileAmount = gridSize * gridSize;
+    public boolean loadingObjects = false;
+    private boolean allowUpdate = false;
+    private int loadingBarWidth = 0;
+    public int prevLoadingBarWidth = 0;
+    int x,y;
 
     ArrayList<String> cellChoice = new ArrayList<>();
 
@@ -186,6 +190,7 @@ public class TileWFCController {
        }
         weight.initialize();
         ArrayList<Cell> finalTileGrid = setupFile();
+        loadingObjects = true;
         objectWFCC.initialize(finalTileGrid, options, tileOptionMap);
         updateFile();
     }
@@ -199,7 +204,7 @@ public class TileWFCController {
             e.printStackTrace();
         }
         tileGrid = new TileGrid(tilesAcross, tilesDown, options, tileOptionMap, optionCompatibilityMap);
-        waveFunctionCollapse(false);
+        waveFunctionCollapse();
         cleanUp();
         return tileGrid.getGrid();
     }
@@ -228,18 +233,40 @@ public class TileWFCController {
             e.printStackTrace();
         }
     }
-    private void waveFunctionCollapse(boolean cleanUp){
+    private void waveFunctionCollapse(){
         boolean keepGoing = true;
         while (keepGoing){
-            keepGoing = tileGrid.collapse(cleanUp);
+            keepGoing = tileGrid.collapse();
+            allowUpdate = true;
         }
     }
+
+    public void draw (Graphics g2) {
+        if (tileGrid != null) {
+            g2.drawRect(175, 384, 700, 50);
+            g2.fillRect(180, 389, loadingBarWidth, 40);
+            if (!loadingObjects && allowUpdate) {
+                x = (int) (345 * ((tileGrid.tilesCollapsed / tileGrid.tilePercentDivider) / 100.0));
+                if (prevLoadingBarWidth <= x) {
+                    loadingBarWidth = x;
+                    allowUpdate = false;
+                }
+            } else if (objectWFCC.grid != null) {
+                y = 345 + (int) (345 * ((objectWFCC.grid.tilesCollapsed / objectWFCC.grid.tilePercentDivider) / 100.0));
+                if (prevLoadingBarWidth <= y) {
+                    loadingBarWidth = y;
+                    allowUpdate = false;
+                }
+            }
+            prevLoadingBarWidth = loadingBarWidth;
+        }
+    }
+
     private void cleanUp(){
-        System.out.println("Cleaning up...");
         boolean keepGoing = true;
         while (keepGoing){
             keepGoing = tileGrid.cleanUp(similarAdjacentTileRequirements);
-            waveFunctionCollapse(true);
+            waveFunctionCollapse();
         }
     }
 

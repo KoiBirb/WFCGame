@@ -10,7 +10,8 @@ public class ObjectGrid {
 
     private final int width;
     private final int height;
-    private final double tilePercentDivider;
+    public final double tilePercentDivider;
+    public int tilesCollapsed = 0;
     private final ArrayList<Cell> grid = new ArrayList<>();
     private final ArrayList<int[]> options;
     private final ArrayList<Cell> finishedGrid;
@@ -74,19 +75,17 @@ public class ObjectGrid {
             cellsToCheck.add(centerIndexRIGHT);
         }
         if (cell != null) {
-            if (cell.collapse()) {
-                int tilesCollapsed = 0;
-                for (int i = 0; i < (width * height); i++) {
-                    if (grid.get(i).isCollapsed()) {
-                        tilesCollapsed++;
-                    }
+            if (!cell.collapse()) {
+                resetAdjacentTiles(cell);
+            }
+            tilesCollapsed = 0;
+            for (int i = 0; i < (width * height); i++) {
+                if (grid.get(i).isCollapsed()) {
+                    tilesCollapsed++;
                 }
-                System.out.println("Placing Objects: " + tilesCollapsed + " (" + (int) (tilesCollapsed / tilePercentDivider) + "%)");
-                } else {
-                    resetAdjacentTiles(cell);
-                }
-            } else {
-                return false;
+            }
+        } else {
+            return false;
         }
 
         while (cellsToCheck.size() != 0) {

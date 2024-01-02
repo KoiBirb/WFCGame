@@ -2,7 +2,6 @@ package object.staticObjects;
 
 import Main.GamePanel;
 
-import java.security.SecureRandom;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.BufferedReader;

@@ -1,6 +1,7 @@
 package WaveFunctionCollapse.Objects;
 
 import WaveFunctionCollapse.Cell;
+import WaveFunctionCollapse.tiles.TileWFCController;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,9 +11,9 @@ import java.io.FileWriter;
 import java.util.HashMap;
 
 public class ObjectWFCController {
-    ObjectGrid grid;
+    public ObjectGrid grid;
 
-    public final int gridSize = 20;
+    public final int gridSize = 40;
     public final int tilesAcross = gridSize;
     public final int tilesDown = gridSize;
     public final int tileAmount = gridSize * gridSize;
@@ -127,6 +128,7 @@ public class ObjectWFCController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         grid = new ObjectGrid(tilesAcross, tilesDown, optionsObject, optionMap, tileGrid, tileOptionMap);
         waveFunctionCollapse();
     }
@@ -157,7 +159,7 @@ public class ObjectWFCController {
     }
     private void waveFunctionCollapse(){
         boolean keepGoing = true;
-        while (keepGoing){
+        while (keepGoing) {
             keepGoing = grid.collapse();
         }
     }

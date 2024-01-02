@@ -10,11 +10,12 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TileGrid extends JPanel{
+public class TileGrid {
 
     private final int width;
     private final int height;
-    private final double tilePercentDivider;
+    public final double tilePercentDivider;
+    public int tilesCollapsed = 0;
     private final ArrayList<Cell> grid = new ArrayList<>();
     private final ArrayList<int[]> options;
     HashMap<Integer, HashMap<Integer, Boolean>> optionCompatibilityMap;
@@ -29,11 +30,6 @@ public class TileGrid extends JPanel{
         this.optionMap = optionMap;
         this.optionCompatibilityMap = optionCompatibilityMap;
         this.tilePercentDivider = (width * height) / 100.0;
-
-        this.setPreferredSize(new Dimension(1024, 768));
-        this.setDoubleBuffered(true);
-        this.setFocusable(true);
-
 
         setupGrid();
     }
@@ -57,7 +53,7 @@ public class TileGrid extends JPanel{
         return mapOrdered.get(new SecureRandom().nextInt(mapOrdered.size()));
     }
 
-    public boolean collapse(boolean cleanUp) {
+    public boolean collapse() {
         ArrayList<Integer> cellsToCheck = new ArrayList<>();
         ArrayList<Integer> cellsChecked = new ArrayList<>();
         Cell cell = getCell();
@@ -84,20 +80,14 @@ public class TileGrid extends JPanel{
         }
 
         if (cell != null) {
-            if (cell.collapse()) {
-                int tilesCollapsed = 0;
-                for (int i = 0; i < (width * height); i++) {
-                    if (grid.get(i).isCollapsed()) {
-                        tilesCollapsed++;
-                    }
-                }
-                if (cleanUp) {
-                    System.out.println("Cleaning up: " + tilesCollapsed + " (" + (int) (tilesCollapsed / tilePercentDivider) + "%)");
-                } else {
-                    System.out.println("Creating Map: " + tilesCollapsed + " (" + (int) (tilesCollapsed / tilePercentDivider) + "%)");
-                }
-            } else {
+            if (!cell.collapse()) {
                 resetAdjacentTiles(cell);
+            }
+            tilesCollapsed = 0;
+            for (int i = 0; i < (width * height); i++) {
+                if (grid.get(i).isCollapsed()) {
+                    tilesCollapsed++;
+                }
             }
         } else {
             return false;
@@ -367,10 +357,6 @@ public class TileGrid extends JPanel{
         currentCell.setOptions(options);
         currentCell.setState();
         currentCell.setWeight(new int[]{1});
-    }
-
-    public void draw (Graphics g2){
-        
     }
 
     public ArrayList<Cell> getGrid() {

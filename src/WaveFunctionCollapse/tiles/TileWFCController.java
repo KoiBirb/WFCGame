@@ -1,5 +1,6 @@
 package WaveFunctionCollapse.tiles;
 
+import Main.GamePanel;
 import WaveFunctionCollapse.Cell;
 import WaveFunctionCollapse.Objects.ObjectWFCController;
 
@@ -15,7 +16,7 @@ public class TileWFCController {
     public TileGrid tileGrid;
     public ObjectWFCController objectWFCC = new ObjectWFCController();
 
-    public final int gridSize = 40;
+    public final int gridSize = GamePanel.maxWorldSize;
     public final int tilesAcross = gridSize;
     public final int tilesDown = gridSize;
     public final int tileAmount = gridSize * gridSize;

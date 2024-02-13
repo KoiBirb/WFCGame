@@ -71,7 +71,7 @@ public class Cell implements Comparable<Cell>{
                         int randomInt = random.nextInt(minWeightSize(collapsedTileWeight),1);
                         for(int i = 0; i < collapsedTileWeight.length; i++) {
                             if (randomInt >= collapsedTileWeight[i]){
-                                tileChoice = options.get(i);
+                                tileChoice = options.get(i); 
                                 break;
                             }
                         }
@@ -113,4 +113,6 @@ public class Cell implements Comparable<Cell>{
     public int compareTo(Cell o) {
         return Double.compare(entropy(), o.entropy());
     }
+
+
 }

@@ -4,21 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="added slime">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/CollisionCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/CollisionCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/objectMap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/tileMap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/D_Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/D_Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/D_Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/D_Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/D_Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/D_Attack6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/S_Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/S_Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/S_Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/S_Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/S_Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/S_Attack6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/MouseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Maps/objectMap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Maps/tileMap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Objects/ObjectWFCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Objects/ObjectWFCController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/tiles/TileWFCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/tiles/TileWFCController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/D_Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/D_Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/D_Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/D_Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/D_Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/D_Attack6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/S_Attack1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/S_Attack2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/S_Attack3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/S_Attack4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/S_Attack5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/S_Attack6.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assets/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Maps/objectMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assets/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Maps/tileMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectWFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectWFCController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileGrid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileWFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/tiles/TileWFCController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/staticObjects/ObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/staticObjects/ObjectManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +65,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2U2B3WQmgAnJc3ljZGJyDd5y2sc" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -49,8 +79,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Run.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;testing&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/koi/Documents/GitHub/PirateGame/src/Assets/Objects&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -83,6 +116,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-203781b8" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -156,7 +196,39 @@
       <option name="project" value="LOCAL" />
       <updated>1703015542478</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added slime">
+      <option name="closed" value="true" />
+      <created>1705541786269</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1705541786269</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added slime">
+      <option name="closed" value="true" />
+      <created>1705541810622</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1705541810622</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added slime">
+      <option name="closed" value="true" />
+      <created>1705541810882</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1705541810882</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added slime">
+      <option name="closed" value="true" />
+      <created>1705541813523</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1705541813523</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

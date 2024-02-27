@@ -55,12 +55,12 @@ public class Cell implements Comparable<Cell>{
     }
 
     public boolean collapse(){
-            try {
+             if(!options.isEmpty()){
                 if (weight[0] != 1) {
                     int[] tileChoice = null;
                     int[] collapsedTileWeight = new int[options.size()];
                     collapsedTileWeight[0] = 1;
-                    for(int i = 0; i < collapsedTileWeight.length; i++) {
+                    for (int i = 0; i < collapsedTileWeight.length; i++) {
                         int index = i;
                         if (index != 0) {
                             index--;
@@ -68,10 +68,10 @@ public class Cell implements Comparable<Cell>{
                         collapsedTileWeight[i] = collapsedTileWeight[index] - weight[optionMap.get(options.get(i))];
                     }
                     try {
-                        int randomInt = random.nextInt(minWeightSize(collapsedTileWeight),1);
-                        for(int i = 0; i < collapsedTileWeight.length; i++) {
-                            if (randomInt >= collapsedTileWeight[i]){
-                                tileChoice = options.get(i); 
+                        int randomInt = random.nextInt(minWeightSize(collapsedTileWeight), 1);
+                        for (int i = 0; i < collapsedTileWeight.length; i++) {
+                            if (randomInt >= collapsedTileWeight[i]) {
+                                tileChoice = options.get(i);
                                 break;
                             }
                         }
@@ -79,11 +79,11 @@ public class Cell implements Comparable<Cell>{
                         return collapsed;
                     }
                     options = new ArrayList<>(Collections.singletonList(tileChoice));
-                }else{
+                } else {
                     options = new ArrayList<>(Collections.singletonList(options.get(random.nextInt(options.size()))));
                 }
-            } catch (IndexOutOfBoundsException e) {
-                return collapsed;
+            }else{
+             return collapsed;
             }
             collapsed = true;
             return collapsed;

@@ -2,7 +2,6 @@ package WaveFunctionCollapse.Objects;
 
 import Main.GamePanel;
 import WaveFunctionCollapse.Cell;
-import WaveFunctionCollapse.tiles.TileWFCController;
 
 import java.io.IOException;
 import java.util.ArrayList;

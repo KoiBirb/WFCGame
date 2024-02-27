@@ -26,7 +26,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     // world map settings
     TileWFCController tileWFCC = new TileWFCController();
-    public static final int maxWorldSize = 20;
+    public static final int maxWorldSize = 40;
 
     int FPS = 60; // frames per second
 

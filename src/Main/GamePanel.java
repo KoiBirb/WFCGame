@@ -1,7 +1,4 @@
 package Main;
-
-import WaveFunctionCollapse.Objects.ObjectWFCController;
-import WaveFunctionCollapse.tiles.TileGrid;
 import entity.Entity;
 import entity.Player;
 import object.dynamicObjects.SuperObject;

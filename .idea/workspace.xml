@@ -4,223 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="Working vers">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="Sped up a bit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Lit/1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Lit/2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Lit/3 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Lit/4 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Lit/5 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Lit/6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Unlit/1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Unlit/2 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Unlit/3 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Unlit/4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Unlit/5 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/AnimatedObjects/Campfire/Unlit/6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/AnimatedObjects/Campfire/Lit/4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/AnimatedObjects/Campfire/Unlit/4 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Enemy/3/D_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Enemy/4/D_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Enemy/Slime/Death/D_Death2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Enemy/Slime/Special/U_Special 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Enemy/Slime/Walk/S_Walk 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Fonts/Font 2.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/objectMap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/tileMap 2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/tileMap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Grass 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1Down 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1Inverted 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1Left1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1Left2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1LeftDown 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1LeftRight 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1Right 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1Surround 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1Up 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path1UpDown 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path2Down 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path2LeftUp 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path2LeftUpDown 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path2Right1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path2Right2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path2Up 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path2UpDown 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path3Down 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path3Left 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path3LeftRight 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path3LeftRightUp 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path3Right 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path3RightDown 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path4Left 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path4RightUp 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path4RightUpDown 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path4Up 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Tiles/Path4UpDown 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/objects/Bush/4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/objects/Camp/2 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/objects/Decor/Box4 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/objects/Flower/8 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/objects/Grass/4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/objects/Stone/8 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/objects/key 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/S_Attack 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Attack/U_Attack 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Death/D_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Death/S_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Death/U_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_down_1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_down_2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_down_3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_down_4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_down_5 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_down_6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_left_1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_left_2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_left_3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_left_4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_left_5 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_left_6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_right_1 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_right_2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_right_3 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_right_4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_right_5 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_right_6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_up_1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_up_2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_up_3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_up_4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_up_5 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/player/Walk/player_up_6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/sound/background_music_2 2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/sound/key_collect 2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/3/D_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/4/D_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Death/D_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Death/D_Death2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Death/S_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Death/S_Death2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Death/U_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Death/U_Death2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Special/D_Special 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Special/S_Special 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Special/U_Special 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Walk/D_Walk 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Walk/S_Walk 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Walk/up1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Walk/up2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Walk/up3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Walk/up4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Walk/up5 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Enemy/Slime/Walk/up6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/AssetHandler 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/CollisionCheck 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/CollisionCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/CollisionCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel 2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/KeyInput 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/Main 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/Sound 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/UI 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Maps/objectMap 2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Maps/objectMap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Maps/tileMap 2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Maps/tileMap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Tiles/Tile 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Tiles/TileManager 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Objects/ObjectGrid 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Objects/ObjectWFCController 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Objects/ObjectWFCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Objects/ObjectWFCController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/Objects/ObjectWeights 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/tiles/TileGrid 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/tiles/TileWFCController 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/tiles/TileWFCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/tiles/TileWFCController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/WaveFunctionCollapse/tiles/TilesWeights 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/entity/Entity 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/entity/Player 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/object/dynamicObjects/Chest 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/object/dynamicObjects/Key 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/object/dynamicObjects/SuperObject 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/object/staticObjects/ObjectManager 3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/object/staticObjects/ObjectManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/object/staticObjects/ObjectManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/object/staticObjects/StaticObject 2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Bush/1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Bush/2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Bush/3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Bush/4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Bush/5 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Bush/6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Camp/1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Camp/2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Box1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Box2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Box3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Box4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Lamp1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Lamp2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Lamp3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Log1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Log2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Log3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Log4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Tree1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Decor/Tree2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/10 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/11 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/12 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/5 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/7 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/8 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Flower/9 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Grass/1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Grass/2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Grass/3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Grass/4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Grass/5 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Grass/6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/1 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/10 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/11 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/12 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/13 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/14 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/15 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/16 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/2 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/3 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/5 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/6 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/7 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/8 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/Stone/9 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/blank 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/chest 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/objects/key 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Attack/S_Attack 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Death/D_Death 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/player/Walk/player_right_4 2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/tiles/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/tiles/TileManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assets/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Maps/objectMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assets/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Maps/tileMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectWFCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectWFCController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,6 +28,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">

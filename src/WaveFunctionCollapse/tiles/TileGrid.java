@@ -1,11 +1,6 @@
 package WaveFunctionCollapse.tiles;
 
 import WaveFunctionCollapse.Cell;
-import entity.Entity;
-import object.dynamicObjects.SuperObject;
-
-import javax.swing.*;
-import java.awt.*;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;

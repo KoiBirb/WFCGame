@@ -1,7 +1,4 @@
 package Main;
-
-import WaveFunctionCollapse.Objects.ObjectWFCController;
-import WaveFunctionCollapse.tiles.TileGrid;
 import entity.Entity;
 import entity.Player;
 import object.dynamicObjects.SuperObject;
@@ -26,7 +23,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     // world map settings
     TileWFCController tileWFCC = new TileWFCController();
-    public final int maxWorldSize = tileWFCC.gridSize;
+    public static final int maxWorldSize = 40;
 
     int FPS = 60; // frames per second
 

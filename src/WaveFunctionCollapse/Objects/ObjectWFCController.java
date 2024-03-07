@@ -1,7 +1,7 @@
 package WaveFunctionCollapse.Objects;
 
+import Main.GamePanel;
 import WaveFunctionCollapse.Cell;
-import WaveFunctionCollapse.tiles.TileWFCController;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class ObjectWFCController {
     public ObjectGrid grid;
 
-    public final int gridSize = 40;
+    public final int gridSize = GamePanel.maxWorldSize;
     public final int tilesAcross = gridSize;
     public final int tilesDown = gridSize;
     public final int tileAmount = gridSize * gridSize;

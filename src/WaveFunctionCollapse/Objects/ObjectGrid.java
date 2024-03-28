@@ -88,7 +88,7 @@ public class ObjectGrid {
             return false;
         }
 
-        while (cellsToCheck.size() != 0) {
+        while (!cellsToCheck.isEmpty()) {
             for (int i = 0; i < cellsToCheck.size(); i++) {
                 int index = cellsToCheck.get(i);
                 Cell currentCell = grid.get(index);
@@ -206,16 +206,12 @@ public class ObjectGrid {
     public boolean checkArrayList (ArrayList<int[]> originalList, ArrayList<int[]> modifiedList){
         if (originalList.size() == modifiedList.size()){
             int correctOptions = 0;
-            for (int i = 0; i < originalList.size(); i++){
-                if (modifiedList.contains(originalList.get(i))){
+            for (int[] ints : originalList) {
+                if (modifiedList.contains(ints)) {
                     correctOptions++;
                 }
             }
-            if (correctOptions == originalList.size()){
-                return true;
-            } else {
-                return false;
-            }
+            return correctOptions == originalList.size();
         } else {
             return false;
         }

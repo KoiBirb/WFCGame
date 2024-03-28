@@ -51,6 +51,9 @@ public class Cell implements Comparable<Cell>{
                 min = v;
             }
         }
+        if (min > 200000000) {
+            System.out.println("djhsbfjkds");
+        }
         return min;
     }
 
@@ -86,7 +89,7 @@ public class Cell implements Comparable<Cell>{
              return collapsed;
             }
             collapsed = true;
-            return collapsed;
+            return true;
     }
 
     public boolean isCollapsed(){

@@ -23,7 +23,6 @@ public class Main {
         window.setVisible(true);
 
         // start game
-        gamePanel.startGameThread();
-        gamePanel.loadMap();
+        gamePanel.startThread();
     }
 }

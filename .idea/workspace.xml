@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="337c603e-fd00-4679-8696-4c5ecdc3d9c7" name="Changes" comment="Sped up a bit">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/objectMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Assets/Maps/tileMap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Main/GamePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Maps/objectMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PirateGame/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PirateGame/Maps/tileMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assets/Maps/objectMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Maps/objectMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Assets/Maps/tileMap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets/Maps/tileMap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WaveFunctionCollapse/Objects/ObjectGrid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,22 +52,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Run.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "testing",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/koi/GitHub/PirateGame",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Run.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;testing&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/koi/GitHub/PirateGame&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Assets/Objects" />

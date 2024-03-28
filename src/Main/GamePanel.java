@@ -38,6 +38,7 @@ public class GamePanel extends JPanel implements Runnable{
     Sound effect = new Sound();
 
     Thread gameThread;
+    Thread mapThread;
 
     public UI ui = new UI(this);
 
@@ -71,17 +72,18 @@ public class GamePanel extends JPanel implements Runnable{
         playMusic(0);
     }
     public void loadMap(){
-        gameState = loadingState;
+        gameState = playState;
         double baseLoadTime = System.currentTimeMillis();
         tileWFCC.initialize();
         double currentLoadTime = (System.currentTimeMillis() - baseLoadTime)/1000.0;
         System.out.println("Load Time: " + currentLoadTime + "s");
-        gameState = playState;
     }
 
-    public void startGameThread() {
+    public void startThread() {
         // initiate thread
         gameThread = new Thread(this);
+        mapThread = new Thread(this::loadMap);
+        mapThread.start();
         gameThread.start();
     }
 
@@ -116,6 +118,10 @@ public class GamePanel extends JPanel implements Runnable{
                 timer = 0;
             }
         }
+    }
+
+    public void createMap(){
+
     }
     public void update() {
 
